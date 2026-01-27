@@ -5,11 +5,11 @@
   "creature_spawn_probability": 0,
   "effects": {
     "sky_color": 8367835,
-    "fog_color": 0,
+    "fog_color": 11460079,
     "water_color": 0,
     "water_fog_color": 0,
-    "grass_color": 12565611,
-    "foliage_color": 7906624
+    "grass_color": 12570992,
+    "foliage_color": 7252031
   },
   "spawners": {},
   "spawn_costs": {},
@@ -17,8 +17,14 @@
   "features": [
     [],
     [
-      "minecraft:patch_tall_grass",
+      "minecraft:patch_grass_taiga_2",
       "minecraft:patch_grass_savanna"
+    ],
+    [
+      "biome-variety:baobab_tree"
+    ],
+    [
+      "minecraft:freeze_top_layer"
     ]
   ]
 }

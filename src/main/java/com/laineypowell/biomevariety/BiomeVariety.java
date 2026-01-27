@@ -1,5 +1,6 @@
 package com.laineypowell.biomevariety;
 
+import com.laineypowell.biomevariety.worldgen.BiomeVarietyFeatures;
 import com.laineypowell.biomevariety.worldgen.BiomeVarietyRegion;
 import com.laineypowell.biomevariety.worldgen.BiomeVarietySurfaceRules;
 import net.fabricmc.api.ModInitializer;
@@ -22,6 +23,7 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
     public void onInitialize() {
         BiomeVarietyBlocks.register();
         BiomeVarietyItems.register();
+        BiomeVarietyFeatures.register();
 
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, resourceLocation(MOD_ID), FabricItemGroup.builder()
                         .icon(BiomeVarietyItems.BAOBAB_LOG::getDefaultInstance)
