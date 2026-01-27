@@ -12,6 +12,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.shapes.BooleanOp;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.joml.Matrix4f;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
 import terrablender.api.TerraBlenderApi;
@@ -33,6 +39,8 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.BAOBAB_WOOD);
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG);
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_WOOD);
+                            output.accept(BiomeVarietyItems.BAOBAB_LOG_WEDGE);
+                            output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG_WEDGE);
                         })
                 .build());
 
@@ -56,6 +64,24 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
         var flammableBlocks = FlammableBlockRegistry.getDefaultInstance();
         flammableBlocks.add(log, 5, 5);
         flammableBlocks.add(strippedLog, 5, 5);
+    }
+
+    public static VoxelShape rotate(VoxelShape shape, Quaternionf quaternionf) {
+        var matrix4f = new Matrix4f();
+        matrix4f.translate(0.5f, 0.5f, 0.5f);
+        matrix4f.rotate(quaternionf);
+        matrix4f.translate(-0.5f, -0.5f, -0.5f);
+
+        var rotatedShape = Shapes.empty();
+
+        var min = new Vector3f();
+        var max = new Vector3f();
+        for (var aabb : shape.toAabbs()) {
+            matrix4f.transformAab((float) aabb.minX, (float) aabb.minY, (float) aabb.minZ, (float) aabb.maxX, (float) aabb.maxY, (float) aabb.maxZ, min, max);
+            rotatedShape = Shapes.or(rotatedShape, Shapes.create(min.x, min.y, min.z, max.x, max.y, max.z));
+        }
+
+        return rotatedShape;
     }
 
 }

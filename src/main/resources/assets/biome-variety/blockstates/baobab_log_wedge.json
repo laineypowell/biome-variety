@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "biome-variety:block/baobab_log_wedge"
+    },
+    "facing=east": {
+      "model": "biome-variety:block/baobab_log_wedge",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "biome-variety:block/baobab_log_wedge",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "biome-variety:block/baobab_log_wedge",
+      "y": 90
+    }
+  }
+}

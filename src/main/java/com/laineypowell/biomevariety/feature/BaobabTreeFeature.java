@@ -1,7 +1,9 @@
 package com.laineypowell.biomevariety.feature;
 
 import com.laineypowell.biomevariety.BiomeVarietyBlocks;
-import net.minecraft.world.level.block.Block;
+import com.laineypowell.biomevariety.Structure;
+import com.laineypowell.biomevariety.block.BaobabLogWedgeBlock;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -13,23 +15,26 @@ public final class BaobabTreeFeature extends Feature<NoneFeatureConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> featurePlaceContext) {
+        var log = BiomeVarietyBlocks.BAOBAB_LOG.defaultBlockState();
+        var wedge = BiomeVarietyBlocks.BAOBAB_LOG_WEDGE.defaultBlockState();
 
-        var level = featurePlaceContext.level();
-        var blockPos = featurePlaceContext.origin();
-        var blockState = BiomeVarietyBlocks.BAOBAB_LOG.defaultBlockState();
+        var structure = Structure.structure();
 
         var random = featurePlaceContext.random();
         var j = random.nextInt(50) == 0 ? 5 : 6 + random.nextInt(4);
         for (var i = 0; i < j; i++) {
-            level.setBlock(blockPos.above(i), blockState, Block.UPDATE_ALL);
-            level.setBlock(blockPos.above(i).offset(1, 0, 0), blockState, Block.UPDATE_ALL);
-            level.setBlock(blockPos.above(i).offset(0, 0, 1), blockState, Block.UPDATE_ALL);
-            level.setBlock(blockPos.above(i).offset(1, 0, 1), blockState, Block.UPDATE_ALL);
+            var b = i < j - 2;
+            structure.add(0, i, 0, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.WEST) : log);
+            structure.add(1, i, 0, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.SOUTH) : log);
+            structure.add(1, i, 1, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.EAST) : log);
+            structure.add(0, i, 1, b ? wedge : log);
         }
 
         for (var i = 0; i < 2; i++) {
-            level.setBlock(blockPos.above(j), blockState, Block.UPDATE_ALL);
+            structure.add(0, j, 0, log);
         }
+
+        structure.place(featurePlaceContext.level(), featurePlaceContext.origin());
 
         return true;
     }
