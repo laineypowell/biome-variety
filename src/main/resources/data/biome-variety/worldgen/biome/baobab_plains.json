@@ -17,6 +17,7 @@
   "features": [
     [],
     [
+      "biome-variety:flower",
       "minecraft:patch_grass_taiga_2",
       "minecraft:patch_grass_savanna"
     ],

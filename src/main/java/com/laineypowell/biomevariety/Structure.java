@@ -18,7 +18,7 @@ public final class Structure {
     }
 
     public void add(int x, int y, int z, BlockState blockState) {
-        map.put(new BlockPos(x, y, z), blockState);
+        map.putIfAbsent(new BlockPos(x, y, z), blockState);
     }
 
     public void add(BlockPos blockPos, BlockState blockState) {
@@ -40,7 +40,10 @@ public final class Structure {
 
     public void place(WorldGenLevel level, BlockPos blockPos) {
         for (var entry : map.entrySet()) {
-            level.setBlock(entry.getKey().offset(blockPos), entry.getValue(), Block.UPDATE_ALL);
+            var levelBlockPos = entry.getKey().offset(blockPos);
+            var blockState = entry.getValue();
+            level.setBlock(levelBlockPos, blockState, Block.UPDATE_ALL);
+            level.scheduleTick(levelBlockPos, blockState.getBlock(), 1);
         }
 
     }
