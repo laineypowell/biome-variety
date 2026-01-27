@@ -23,7 +23,7 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:0.18.4")
     modImplementation("net.fabricmc.fabric-api:fabric-api:0.92.7+1.20.1")
 
-    modImplementation("com.cobblemon:fabric:1.5.2+1.20.1")
+    modCompileOnly("com.cobblemon:fabric:1.5.2+1.20.1")
     modImplementation("com.github.glitchfiend:TerraBlender-fabric:1.20.1-3.0.1.10")
 }
 

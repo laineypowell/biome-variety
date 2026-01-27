@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "biome-variety",
+  "version": "{version}",
+  "name": "Biome Variety",
+  "description": "biomes for Minecraft",
+  "authors": [
+    "laineypowell"
+  ],
+  "contact": {
+    "homepage": "hhttps://www.curseforge.com/minecraft/mc-mods/cults",
+    "sources": "https://github.com/laineypowell/cults"
+  },
+  "license": "All Rights Reserved",
+  "icon": "assets/biome-variety/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.laineypowell.biomevariety.BiomeVariety"
+    ],
+    "client": [
+      "com.laineypowell.biomevariety.client.BiomeVarietyClient"
+    ],
+    "terrablender": [
+      "com.laineypowell.biomevariety.BiomeVariety"
+    ]
+  },
+  "mixins": [
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*",
+    "terrablender": ">=3.0.1.10"
+  }
+}
