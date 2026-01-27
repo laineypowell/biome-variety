@@ -4,15 +4,21 @@
   "has_precipitation": true,
   "creature_spawn_probability": 0,
   "effects": {
-    "sky_color": 0,
+    "sky_color": 8367835,
     "fog_color": 0,
     "water_color": 0,
     "water_fog_color": 0,
-    "grass_color": 0,
-    "foliage_color": 0
+    "grass_color": 12565611,
+    "foliage_color": 7906624
   },
   "spawners": {},
   "spawn_costs": {},
   "carvers": {},
-  "features": []
+  "features": [
+    [],
+    [
+      "minecraft:patch_tall_grass",
+      "minecraft:patch_grass_savanna"
+    ]
+  ]
 }
