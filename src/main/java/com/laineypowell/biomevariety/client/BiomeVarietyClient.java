@@ -12,7 +12,8 @@ import net.minecraft.world.level.GrassColor;
 public final class BiomeVarietyClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(BiomeVarietyBlocks.BUTTONWEED, RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(), BiomeVarietyBlocks.BUTTONWEED, BiomeVarietyBlocks.VIOLET);
+
         BlockRenderLayerMap.INSTANCE.putBlock(BiomeVarietyBlocks.SILT_GRASS_BLOCK, RenderType.cutout());
 
         ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) ->

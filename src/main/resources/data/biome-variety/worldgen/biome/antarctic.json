@@ -9,7 +9,7 @@
     "water_color": 2055855,
     "water_fog_color": 0,
     "grass_color": 15269882,
-    "foliage_color": 9158933
+    "foliage_color": 13206084
   },
   "spawners": {},
   "spawn_costs": {},
@@ -17,7 +17,8 @@
   "features": [
     [],
     [
-      "minecraft:patch_grass_taiga_2"
+      "minecraft:patch_grass_taiga_2",
+      "biome-variety:flower_violet"
     ],
     [
       "minecraft:freeze_top_layer"

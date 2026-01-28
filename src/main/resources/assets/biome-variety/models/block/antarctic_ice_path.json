@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/dirt_path",
+  "textures": {
+    "particle": "biome-variety:block/antarctic_ice",
+    "top": "biome-variety:block/antarctic_ice_path_top",
+    "side": "biome-variety:block/antarctic_ice_path_side",
+    "bottom": "biome-variety:block/antarctic_ice"
+  }
+}

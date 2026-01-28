@@ -9,6 +9,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.Level;
@@ -43,8 +44,6 @@ public final class BiomeVarietyBlocks {
         }
     };
 
-    public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
-
     public static final Block SILT_GRASS_BLOCK = new Block(Properties.copy(Blocks.DIRT));
     public static final Block SILT = new Block(Properties.copy(Blocks.DIRT));
     public static final Block SILT_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
@@ -52,8 +51,11 @@ public final class BiomeVarietyBlocks {
 
     public static final Block SNOWY_ANTARCTIC_ICE = new Block(Properties.of().sound(SoundType.SNOW).randomTicks());
     public static final Block ANTARCTIC_ICE = new Block(Properties.copy(Blocks.BLUE_ICE));
-    public static final Block ANTARCTIC_ICE_PATH = new Block(Properties.copy(Blocks.BLUE_ICE));
+    public static final Block ANTARCTIC_ICE_PATH = new DirtPathBlock(Properties.copy(Blocks.BLUE_ICE));
     public static final Block ANTARCTIC_ICE_FARMLAND = new Block(Properties.copy(Blocks.BLUE_ICE));
+
+    public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
+    public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
 
     public static void register() {
         register("baobab_log", BAOBAB_LOG);
@@ -62,7 +64,6 @@ public final class BiomeVarietyBlocks {
         register("stripped_baobab_wood", STRIPPED_BAOBAB_WOOD);
         register("baobab_log_wedge", BAOBAB_LOG_WEDGE);
         register("stripped_baobab_log_wedge", STRIPPED_BAOBAB_LOG_WEDGE);
-        register("buttonweed", BUTTONWEED);
 
         register("silt_grass_block", SILT_GRASS_BLOCK);
         register("silt", SILT);
@@ -71,8 +72,11 @@ public final class BiomeVarietyBlocks {
 
         register("snowy_antarctic_ice", SNOWY_ANTARCTIC_ICE);
         register("antarctic_ice", ANTARCTIC_ICE);
-        register("antactic_ice_path", ANTARCTIC_ICE_PATH);
+        register("antarctic_ice_path", ANTARCTIC_ICE_PATH);
         register("antarctic_ice_farmland", ANTARCTIC_ICE_FARMLAND);
+
+        register("buttonweed", BUTTONWEED);
+        register("violet", VIOLET);
 
     }
 
