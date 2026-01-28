@@ -24,6 +24,13 @@ public final class BaobabTreeFeature extends Feature<NoneFeatureConfiguration> {
 
         var random = featurePlaceContext.random();
         var j = random.nextInt(50) == 0 ? 5 : 6 + random.nextInt(3);
+
+        var dirt = Blocks.DIRT.defaultBlockState();
+        structure.add(0, -1, 0, dirt);
+        structure.add(1, -1, 0, dirt);
+        structure.add(1, -1, 1, dirt);
+        structure.add(0, -1, 1, dirt);
+
         for (var i = 0; i < j; i++) {
             var b = i < j - 3;
             structure.add(0, i, 0, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.WEST) : log);

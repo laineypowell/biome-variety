@@ -23,7 +23,8 @@
       "biome-variety:buttonweed_patches",
       "minecraft:patch_grass_taiga_2",
       "minecraft:patch_grass_savanna",
-      "biome-variety:tall_grass_patches"
+      "biome-variety:tall_grass_patches",
+      "biome-variety:flower_azure_bluet"
     ],
     [
       "biome-variety:sparse_oak",

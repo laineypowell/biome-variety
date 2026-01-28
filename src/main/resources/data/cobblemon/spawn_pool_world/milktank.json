@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+    "biome-variety"
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "miltank-1",
+      "pokemon": "miltank",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "rare",
+      "level": "12-24",
+      "weight": 0.75,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "biome-variety:baobab_plains"
+        ]
+      }
+    }
+  ]
+}

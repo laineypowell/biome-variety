@@ -1,6 +1,7 @@
 package com.laineypowell.biomevariety;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
@@ -18,11 +19,16 @@ public final class Structure {
     }
 
     public void add(int x, int y, int z, BlockState blockState) {
-        map.putIfAbsent(new BlockPos(x, y, z), blockState);
+        add(new BlockPos(x, y, z), blockState);
     }
 
     public void add(BlockPos blockPos, BlockState blockState) {
-        map.put(blockPos, blockState);
+        if (map.containsKey(blockPos) && map.get(blockPos).is(BlockTags.LEAVES) && !blockState.is(BlockTags.LEAVES)) {
+            map.put(blockPos, blockState);
+            return;
+        }
+
+        map.putIfAbsent(blockPos, blockState);
     }
 
     public Structure rotate(RandomSource randomSource) {
