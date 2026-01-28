@@ -40,12 +40,14 @@ public final class Structure {
 
     public void place(WorldGenLevel level, BlockPos blockPos) {
         for (var entry : map.entrySet()) {
-            var levelBlockPos = entry.getKey().offset(blockPos);
-            var blockState = entry.getValue();
-            level.setBlock(levelBlockPos, blockState, Block.UPDATE_ALL);
-            level.scheduleTick(levelBlockPos, blockState.getBlock(), 1);
+            setBlock(level, entry.getKey().offset(blockPos), entry.getValue());
         }
 
+    }
+
+    private void setBlock(WorldGenLevel level, BlockPos blockPos, BlockState blockState) {
+        level.setBlock(blockPos, blockState, Block.UPDATE_ALL);
+        level.scheduleTick(blockPos, blockState.getBlock(), 1);
     }
 
     public static Structure structure() {

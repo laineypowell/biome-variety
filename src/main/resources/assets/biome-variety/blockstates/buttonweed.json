@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "biome-variety:block/buttonweed"
+    },
+    "facing=east": {
+      "model": "biome-variety:block/buttonweed",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "biome-variety:block/buttonweed",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "biome-variety:block/buttonweed",
+      "y": 270
+    }
+  }
+}

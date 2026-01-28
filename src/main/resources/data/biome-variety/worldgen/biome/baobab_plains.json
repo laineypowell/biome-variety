@@ -9,7 +9,7 @@
     "water_color": 0,
     "water_fog_color": 0,
     "grass_color": 12570992,
-    "foliage_color": 7252031
+    "foliage_color": 9549124
   },
   "spawners": {},
   "spawn_costs": {},
@@ -22,6 +22,7 @@
       "minecraft:patch_grass_savanna"
     ],
     [
+      "biome-variety:sparse_oak",
       "biome-variety:baobab_tree"
     ],
     [

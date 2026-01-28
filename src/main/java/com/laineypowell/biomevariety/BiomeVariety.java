@@ -40,6 +40,9 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_WOOD);
                             output.accept(BiomeVarietyItems.BAOBAB_LOG_WEDGE);
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG_WEDGE);
+                            output.accept(BiomeVarietyItems.SANDY_DIRT);
+                            output.accept(BiomeVarietyItems.SANDY_DIRT_PATH);
+                            output.accept(BiomeVarietyItems.SANDY_DIRT_FARMLAND);
                         })
                 .build());
 

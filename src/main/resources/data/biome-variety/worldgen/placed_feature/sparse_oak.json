@@ -1,5 +1,5 @@
 {
-  "feature": "biome-variety:baobab_tree",
+  "feature": "minecraft:oak",
   "placement": [
     {
       "type": "minecraft:count",
@@ -12,7 +12,7 @@
           },
           {
             "data": 0,
-            "weight": 6
+            "weight": 20
           }
         ]
       }

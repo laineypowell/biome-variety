@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "biome-variety:block/sandy_dirt"
+      },
+      {
+        "model": "biome-variety:block/sandy_dirt",
+        "y": 90
+      },
+      {
+        "model": "biome-variety:block/sandy_dirt",
+        "y": 180
+      },
+      {
+        "model": "biome-variety:block/sandy_dirt",
+        "y": 270
+      }
+    ]
+  }
+}

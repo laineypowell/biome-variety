@@ -1,6 +1,7 @@
 package com.laineypowell.biomevariety;
 
 import com.laineypowell.biomevariety.block.BaobabLogWedgeBlock;
+import com.laineypowell.biomevariety.block.ButtonweedBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,9 +12,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -44,6 +43,11 @@ public final class BiomeVarietyBlocks {
         }
     };
 
+    public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
+    public static final Block SANDY_DIRT = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block SANDY_DIRT_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
+    public static final Block SANDY_DIRT_FARMLAND = new FarmBlock(Properties.copy(Blocks.FARMLAND));
+
     public static void register() {
         register("baobab_log", BAOBAB_LOG);
         register("baobab_wood", BAOBAB_WOOD);
@@ -51,6 +55,10 @@ public final class BiomeVarietyBlocks {
         register("stripped_baobab_wood", STRIPPED_BAOBAB_WOOD);
         register("baobab_log_wedge", BAOBAB_LOG_WEDGE);
         register("stripped_baobab_log_wedge", STRIPPED_BAOBAB_LOG_WEDGE);
+        register("buttonweed", BUTTONWEED);
+        register("sandy_dirt", SANDY_DIRT);
+        register("sandy_dirt_path", SANDY_DIRT_PATH);
+        register("sandy_dirt_farmland", SANDY_DIRT_FARMLAND);
     }
 
     public static void register(String name, Block block) {

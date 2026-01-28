@@ -1,5 +1,6 @@
 package com.laineypowell.biomevariety.worldgen;
 
+import com.laineypowell.biomevariety.BiomeVarietyBlocks;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,7 +33,7 @@ public final class BiomeVarietySurfaceRules {
 
     public static SurfaceRules.RuleSource underground() {
         return SurfaceRules.sequence(
-                SurfaceRules.state(Blocks.DIRT.defaultBlockState()),
+                SurfaceRules.state(BiomeVarietyBlocks.SANDY_DIRT.defaultBlockState()),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.state(Blocks.STONE.defaultBlockState())),
                 SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.STONE.defaultBlockState()))
         );
