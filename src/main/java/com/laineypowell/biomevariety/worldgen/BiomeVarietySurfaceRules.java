@@ -4,7 +4,6 @@ import com.laineypowell.biomevariety.BiomeVarietyBlocks;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
@@ -13,7 +12,7 @@ public final class BiomeVarietySurfaceRules {
     public static SurfaceRules.RuleSource ruleSource() {
         return SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.BAOBAB_PLAINS), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                 SurfaceRules.sequence(
-                        surface(noise(Noises.POWDER_SNOW, 0.0d, Blocks.SAND.defaultBlockState(), Blocks.GRASS_BLOCK.defaultBlockState())),
+                        surface(SurfaceRules.state(Blocks.SAND.defaultBlockState())),
                         underground()
                 )));
     }

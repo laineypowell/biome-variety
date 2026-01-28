@@ -1,0 +1,21 @@
+{
+  "type": "biome-variety:noise_sample",
+  "config": {
+    "block_state": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:grass_block"
+      }
+    },
+    "block_state_below": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "biome-variety:sandy_dirt"
+      }
+    },
+    "radius": 8.0,
+    "resolution": 128.0,
+    "grain": 4.0,
+    "threshold": 0.76
+  }
+}

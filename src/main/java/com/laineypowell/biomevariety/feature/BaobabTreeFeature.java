@@ -37,7 +37,7 @@ public final class BaobabTreeFeature extends Feature<NoneFeatureConfiguration> {
             var x = random.nextInt(r) - random.nextInt(r);
             var z = random.nextInt(r) - random.nextInt(r);
 
-            branch(random.nextInt(1), j, random.nextInt(1), x, j + random.nextInt(2), z, structure, random);
+            branch(random.nextInt(1), j, random.nextInt(1), x, j + 1 + random.nextInt(2), z, structure, random);
         }
 
         structure.place(featurePlaceContext.level(), featurePlaceContext.origin());

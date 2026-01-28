@@ -4,7 +4,7 @@
   "has_precipitation": true,
   "creature_spawn_probability": 0,
   "effects": {
-    "sky_color": 8367835,
+    "sky_color": 6794735,
     "fog_color": 11460079,
     "water_color": 0,
     "water_fog_color": 0,
@@ -17,7 +17,10 @@
   "features": [
     [],
     [
-      "biome-variety:flower",
+      "biome-variety:sandy_dirt_patches"
+    ],
+    [
+      "biome-variety:buttonweed_patches",
       "minecraft:patch_grass_taiga_2",
       "minecraft:patch_grass_savanna"
     ],
