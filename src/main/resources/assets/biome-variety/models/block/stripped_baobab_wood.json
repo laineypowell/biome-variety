@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "biome-variety:block/stripped_baobab_log",
+    "side": "biome-variety:block/stripped_baobab_log"
+  }
+}

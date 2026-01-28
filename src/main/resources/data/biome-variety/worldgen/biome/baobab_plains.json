@@ -6,10 +6,10 @@
   "effects": {
     "sky_color": 6794735,
     "fog_color": 11460079,
-    "water_color": 0,
+    "water_color": 7130309,
     "water_fog_color": 0,
     "grass_color": 12570992,
-    "foliage_color": 9549124
+    "foliage_color": 9158933
   },
   "spawners": {},
   "spawn_costs": {},
@@ -22,7 +22,8 @@
     [
       "biome-variety:buttonweed_patches",
       "minecraft:patch_grass_taiga_2",
-      "minecraft:patch_grass_savanna"
+      "minecraft:patch_grass_savanna",
+      "biome-variety:tall_grass_patches"
     ],
     [
       "biome-variety:sparse_oak",

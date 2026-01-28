@@ -14,7 +14,7 @@
       }
     },
     "radius": 8.0,
-    "resolution": 128.0,
+    "resolution": 24.0,
     "grain": 4.0,
     "threshold": 0.76
   }
