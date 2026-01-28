@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/grass_block",
-  "textures": {
-    "particle": "#bottom",
-    "bottom": "biome-variety:block/sandy_dirt",
-    "side": "biome-variety:block/sandy_grass_block_side"
-  }
-}

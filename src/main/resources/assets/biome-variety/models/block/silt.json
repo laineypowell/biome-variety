@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "biome-variety:block/sandy_dirt"
+    "all": "biome-variety:block/silt"
   }
 }

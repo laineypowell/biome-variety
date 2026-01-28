@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "biome-variety:block/silt"
+      },
+      {
+        "model": "biome-variety:block/silt",
+        "y": 90
+      },
+      {
+        "model": "biome-variety:block/silt",
+        "y": 180
+      },
+      {
+        "model": "biome-variety:block/silt",
+        "y": 270
+      }
+    ]
+  }
+}

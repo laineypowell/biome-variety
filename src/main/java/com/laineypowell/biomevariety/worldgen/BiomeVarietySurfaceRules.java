@@ -32,7 +32,7 @@ public final class BiomeVarietySurfaceRules {
 
     public static SurfaceRules.RuleSource underground() {
         return SurfaceRules.sequence(
-                SurfaceRules.state(BiomeVarietyBlocks.SANDY_DIRT.defaultBlockState()),
+                SurfaceRules.state(BiomeVarietyBlocks.SILT.defaultBlockState()),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.state(Blocks.STONE.defaultBlockState())),
                 SurfaceRules.ifTrue(SurfaceRules.ON_CEILING, SurfaceRules.state(Blocks.STONE.defaultBlockState()))
         );

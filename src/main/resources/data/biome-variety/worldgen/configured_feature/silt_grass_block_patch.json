@@ -4,13 +4,13 @@
     "block_state": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:grass_block"
+        "Name": "biome-variety:silt_grass_block"
       }
     },
     "block_state_below": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "biome-variety:sandy_dirt"
+        "Name": "biome-variety:silt"
       }
     },
     "radius": 8.0,

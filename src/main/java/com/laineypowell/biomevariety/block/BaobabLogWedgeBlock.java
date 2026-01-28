@@ -38,7 +38,13 @@ public class BaobabLogWedgeBlock extends HorizontalDirectionalBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
         var clickedFace = blockPlaceContext.getClickedFace();
-        return defaultBlockState().setValue(FACING, clickedFace == Direction.DOWN || clickedFace == Direction.UP ? blockPlaceContext.getHorizontalDirection().getOpposite() : clickedFace.getClockWise());
+        var map = Map.of(
+                Direction.SOUTH, Direction.EAST,
+                Direction.WEST, Direction.WEST,
+                Direction.EAST, Direction.EAST,
+                Direction.NORTH, Direction.WEST);
+
+        return defaultBlockState().setValue(FACING, clickedFace == Direction.DOWN || clickedFace == Direction.UP ? blockPlaceContext.getHorizontalDirection().getOpposite() : map.get(clickedFace));
     }
 
     @Override

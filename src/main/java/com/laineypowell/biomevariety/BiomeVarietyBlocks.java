@@ -44,9 +44,11 @@ public final class BiomeVarietyBlocks {
     };
 
     public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
-    public static final Block SANDY_DIRT = new Block(Properties.copy(Blocks.DIRT));
-    public static final Block SANDY_DIRT_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
-    public static final Block SANDY_DIRT_FARMLAND = new FarmBlock(Properties.copy(Blocks.FARMLAND));
+
+    public static final Block SILT_GRASS_BLOCK = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block SILT = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block SILT_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
+    public static final Block SILT_FARM = new FarmBlock(Properties.copy(Blocks.FARMLAND));
 
     public static void register() {
         register("baobab_log", BAOBAB_LOG);
@@ -56,9 +58,11 @@ public final class BiomeVarietyBlocks {
         register("baobab_log_wedge", BAOBAB_LOG_WEDGE);
         register("stripped_baobab_log_wedge", STRIPPED_BAOBAB_LOG_WEDGE);
         register("buttonweed", BUTTONWEED);
-        register("sandy_dirt", SANDY_DIRT);
-        register("sandy_dirt_path", SANDY_DIRT_PATH);
-        register("sandy_dirt_farmland", SANDY_DIRT_FARMLAND);
+
+        register("silt_grass_block", SILT_GRASS_BLOCK);
+        register("silt", SILT);
+        register("silt_path", SILT_PATH);
+        register("silt_farm", SILT_FARM);
     }
 
     public static void register(String name, Block block) {

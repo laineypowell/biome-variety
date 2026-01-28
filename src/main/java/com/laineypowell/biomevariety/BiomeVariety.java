@@ -6,7 +6,9 @@ import com.laineypowell.biomevariety.worldgen.BiomeVarietySurfaceRules;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.FlattenableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -40,14 +42,19 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_WOOD);
                             output.accept(BiomeVarietyItems.BAOBAB_LOG_WEDGE);
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG_WEDGE);
-                            output.accept(BiomeVarietyItems.SANDY_DIRT);
-                            output.accept(BiomeVarietyItems.SANDY_DIRT_PATH);
-                            output.accept(BiomeVarietyItems.SANDY_DIRT_FARMLAND);
+
+                            output.accept(BiomeVarietyItems.SILT_GRASS_BLOCK);
+                            output.accept(BiomeVarietyItems.SILT);
+                            output.accept(BiomeVarietyItems.SILT_PATH);
+                            output.accept(BiomeVarietyItems.SILT_FARM);
                         })
                 .build());
 
         log(BiomeVarietyBlocks.BAOBAB_LOG, BiomeVarietyBlocks.STRIPPED_BAOBAB_LOG);
         log(BiomeVarietyBlocks.BAOBAB_WOOD, BiomeVarietyBlocks.STRIPPED_BAOBAB_WOOD);
+
+        dirt(BiomeVarietyBlocks.SILT_GRASS_BLOCK, BiomeVarietyBlocks.SILT_PATH, BiomeVarietyBlocks.SILT_FARM);
+        dirt(BiomeVarietyBlocks.SILT, BiomeVarietyBlocks.SILT_PATH, BiomeVarietyBlocks.SILT_FARM);
     }
 
     @Override
@@ -57,15 +64,20 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, BiomeVarietySurfaceRules.ruleSource());
     }
 
-    public static ResourceLocation resourceLocation(String name) {
-        return new ResourceLocation(MOD_ID, name);
-    }
-
-    public static void log(Block log, Block strippedLog) {
+    public void log(Block log, Block strippedLog) {
         StrippableBlockRegistry.register(log, strippedLog);
         var flammableBlocks = FlammableBlockRegistry.getDefaultInstance();
         flammableBlocks.add(log, 5, 5);
         flammableBlocks.add(strippedLog, 5, 5);
+    }
+
+    public void dirt(Block block, Block pathBlock, Block farmBlock) {
+        FlattenableBlockRegistry.register(block, pathBlock.defaultBlockState());
+        TillableBlockRegistry.register(block, useOnContext -> true, farmBlock.defaultBlockState());
+    }
+
+    public static ResourceLocation resourceLocation(String name) {
+        return new ResourceLocation(MOD_ID, name);
     }
 
     public static VoxelShape rotate(VoxelShape shape, Quaternionf quaternionf) {

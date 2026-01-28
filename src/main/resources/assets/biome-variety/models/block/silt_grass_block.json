@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/grass_block",
+  "textures": {
+    "particle": "#bottom",
+    "bottom": "biome-variety:block/silt",
+    "side": "biome-variety:block/silt_grass_block_side"
+  }
+}

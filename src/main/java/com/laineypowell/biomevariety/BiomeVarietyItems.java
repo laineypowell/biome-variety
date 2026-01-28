@@ -15,9 +15,10 @@ public final class BiomeVarietyItems {
     public static final Item STRIPPED_BAOBAB_LOG_WEDGE = blockItem(BiomeVarietyBlocks.STRIPPED_BAOBAB_LOG_WEDGE);
     public static final Item BUTTONWEED = blockItem(BiomeVarietyBlocks.BUTTONWEED);
 
-    public static final Item SANDY_DIRT = blockItem(BiomeVarietyBlocks.SANDY_DIRT);
-    public static final Item SANDY_DIRT_PATH = blockItem(BiomeVarietyBlocks.SANDY_DIRT_PATH);
-    public static final Item SANDY_DIRT_FARMLAND = blockItem(BiomeVarietyBlocks.SANDY_DIRT_FARMLAND);
+    public static final Item SILT_GRASS_BLOCK = blockItem(BiomeVarietyBlocks.SILT_GRASS_BLOCK);
+    public static final Item SILT = blockItem(BiomeVarietyBlocks.SILT);
+    public static final Item SILT_PATH = blockItem(BiomeVarietyBlocks.SILT_PATH);
+    public static final Item SILT_FARM = blockItem(BiomeVarietyBlocks.SILT_FARM);
 
     public static void register() {
         register("baobab_log", BAOBAB_LOG);
@@ -27,9 +28,11 @@ public final class BiomeVarietyItems {
         register("baobab_log_wedge", BAOBAB_LOG_WEDGE);
         register("stripped_baobab_log_wedge", STRIPPED_BAOBAB_LOG_WEDGE);
         register("buttonweed", BUTTONWEED);
-        register("sandy_dirt", SANDY_DIRT);
-        register("sandy_dirt_path", SANDY_DIRT_PATH);
-        register("sandy_dirt_farmland", SANDY_DIRT_FARMLAND);
+
+        register("silt_grass_block", SILT_GRASS_BLOCK);
+        register("silt", SILT);
+        register("silt_path", SILT_PATH);
+        register("silt_farm", SILT_FARM);
     }
 
     public static void register(String name, Item item) {

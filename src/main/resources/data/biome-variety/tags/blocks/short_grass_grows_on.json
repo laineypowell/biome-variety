@@ -1,5 +1,8 @@
 {
   "values": [
-    "biome-variety:sandy_dirt"
+    "biome-variety:silt_grass_block",
+    "biome-variety:silt",
+    "biome-variety:silt_path",
+    "biome-variety:silt_farm"
   ]
 }
