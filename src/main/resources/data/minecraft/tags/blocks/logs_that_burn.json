@@ -1,11 +1,6 @@
 {
   "replace": false,
   "values": [
-    "biome-variety:baobab_log",
-    "biome-variety:baobab_wood",
-    "biome-variety:stripped_baobab_log",
-    "biome-variety:stripped_baobab_wood",
-    "biome-variety:baobab_log_wedge",
-    "biome-variety:stripped_baobab_log_wedge"
+    "#biome-variety:baobab_logs"
   ]
 }

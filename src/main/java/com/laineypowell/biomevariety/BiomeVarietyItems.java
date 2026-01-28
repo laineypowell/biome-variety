@@ -20,6 +20,11 @@ public final class BiomeVarietyItems {
     public static final Item SILT_PATH = blockItem(BiomeVarietyBlocks.SILT_PATH);
     public static final Item SILT_FARM = blockItem(BiomeVarietyBlocks.SILT_FARM);
 
+    public static final Item SNOWY_ANTARCTIC_ICE = blockItem(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE);
+    public static final Item ANTARCTIC_ICE = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE);
+    public static final Item ANTARCTIC_ICE_PATH = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE_PATH);
+    public static final Item ANTARCTIC_ICE_FARMLAND = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
+
     public static void register() {
         register("baobab_log", BAOBAB_LOG);
         register("baobab_wood", BAOBAB_WOOD);
@@ -33,6 +38,11 @@ public final class BiomeVarietyItems {
         register("silt", SILT);
         register("silt_path", SILT_PATH);
         register("silt_farm", SILT_FARM);
+
+        register("snowy_antarctic_ice", SNOWY_ANTARCTIC_ICE);
+        register("antarctic_ice", ANTARCTIC_ICE);
+        register("antarctic_ice_path", ANTARCTIC_ICE_PATH);
+        register("antarctic_ice_farmland", ANTARCTIC_ICE_FARMLAND);
     }
 
     public static void register(String name, Item item) {

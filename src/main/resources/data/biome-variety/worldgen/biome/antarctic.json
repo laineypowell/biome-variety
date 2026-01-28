@@ -1,0 +1,26 @@
+{
+  "temperature": 1,
+  "downfall": 0,
+  "has_precipitation": true,
+  "creature_spawn_probability": 0,
+  "effects": {
+    "sky_color": 6794735,
+    "fog_color": 11460079,
+    "water_color": 2055855,
+    "water_fog_color": 0,
+    "grass_color": 15269882,
+    "foliage_color": 9158933
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [
+      "minecraft:patch_grass_taiga_2"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

@@ -15,7 +15,7 @@ public final class BushBlockMixin {
 
     @Inject(method = "mayPlaceOn", at = @At("RETURN"), cancellable = true)
     public void biomevariety$mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CallbackInfoReturnable<Boolean> cir) {
-        if (blockState.is(BiomeVarietyBlockTags.SHORT_GRASS_GROWS_ON)) {
+        if (blockState.is(BiomeVarietyBlockTags.GRASS_GROWS_ON)) {
             cir.setReturnValue(true);
         }
     }

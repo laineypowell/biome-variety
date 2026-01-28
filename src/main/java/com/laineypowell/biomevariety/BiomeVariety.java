@@ -47,6 +47,11 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.SILT);
                             output.accept(BiomeVarietyItems.SILT_PATH);
                             output.accept(BiomeVarietyItems.SILT_FARM);
+
+                            output.accept(BiomeVarietyItems.SNOWY_ANTARCTIC_ICE);
+                            output.accept(BiomeVarietyItems.ANTARCTIC_ICE);
+                            output.accept(BiomeVarietyItems.ANTARCTIC_ICE_PATH);
+                            output.accept(BiomeVarietyItems.ANTARCTIC_ICE_FARMLAND);
                         })
                 .build());
 
@@ -55,6 +60,9 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
 
         dirt(BiomeVarietyBlocks.SILT_GRASS_BLOCK, BiomeVarietyBlocks.SILT_PATH, BiomeVarietyBlocks.SILT_FARM);
         dirt(BiomeVarietyBlocks.SILT, BiomeVarietyBlocks.SILT_PATH, BiomeVarietyBlocks.SILT_FARM);
+
+        dirt(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE, BiomeVarietyBlocks.ANTARCTIC_ICE_PATH, BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
+        dirt(BiomeVarietyBlocks.ANTARCTIC_ICE, BiomeVarietyBlocks.ANTARCTIC_ICE_PATH, BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
     }
 
     @Override

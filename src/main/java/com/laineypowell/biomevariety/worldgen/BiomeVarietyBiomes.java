@@ -7,7 +7,7 @@ import net.minecraft.world.level.biome.Biome;
 
 public final class BiomeVarietyBiomes {
     public static final ResourceKey<Biome> BAOBAB_PLAINS = resourceKey("baobab_plains");
-    public static final ResourceKey<Biome> MARSH = resourceKey("marsh");
+    public static final ResourceKey<Biome> ANTARCTIC = resourceKey("antarctic");
 
     public static ResourceKey<Biome> resourceKey(String name) {
         return ResourceKey.create(Registries.BIOME, BiomeVariety.resourceLocation(name));

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "biome-variety:block/antarctic_ice_top",
+    "side": "biome-variety:block/snowy_antarctic_ice",
+    "top": "minecraft:block/snow"
+  }
+}
