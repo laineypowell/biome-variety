@@ -30,7 +30,7 @@
       },
       "subtract": {
         "type": "biome-variety:simplex",
-        "grain": 24.0
+        "grain": 32.0
       }
     },
     "radius": 12.0,

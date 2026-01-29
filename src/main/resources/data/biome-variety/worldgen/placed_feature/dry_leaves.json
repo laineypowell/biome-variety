@@ -1,16 +1,16 @@
 {
-  "feature": "biome-variety:patagonian_oak_tree",
+  "feature": "biome-variety:dry_leaves",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 4
-    },
-    {
-      "type": "minecraft:in_square"
+      "count": 8
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 2
+      "chance": 3
+    },
+    {
+      "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",

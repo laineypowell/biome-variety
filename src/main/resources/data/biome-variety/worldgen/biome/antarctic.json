@@ -1,5 +1,5 @@
 {
-  "temperature": 0.5,
+  "temperature": 0.0,
   "temperature_modifier": "frozen",
   "downfall": 0.25,
   "has_precipitation": true,
@@ -29,7 +29,8 @@
       "biome-variety:flower_violet"
     ],
     [
-      "biome-variety:patagonian_oak_tree"
+      "biome-variety:patagonian_oak_tree",
+      "biome-variety:dry_leaves"
     ],
     [
       "minecraft:freeze_top_layer"

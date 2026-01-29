@@ -34,7 +34,7 @@
     },
     "noise": {
       "type": "biome-variety:simplex",
-      "grain": 8.0
+      "grain": 4.0
     },
     "radius": 8.0,
     "threshold": 0.075
