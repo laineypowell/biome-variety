@@ -52,8 +52,10 @@ public final class Structure {
     }
 
     private void setBlock(WorldGenLevel level, BlockPos blockPos, BlockState blockState) {
-        level.setBlock(blockPos, blockState, Block.UPDATE_ALL);
-        level.scheduleTick(blockPos, blockState.getBlock(), 1);
+        if (level.getBlockState(blockPos).is(BlockTags.REPLACEABLE_BY_TREES)) {
+            level.setBlock(blockPos, blockState, Block.UPDATE_ALL);
+            level.scheduleTick(blockPos, blockState.getBlock(), 1);
+        }
     }
 
     public static Structure structure() {

@@ -18,13 +18,21 @@ public final class BiomeVarietyClient implements ClientModInitializer {
                 BiomeVarietyBlocks.DRY_LEAVES,
                 BiomeVarietyBlocks.BUTTONWEED,
                 BiomeVarietyBlocks.VIOLET,
-                BiomeVarietyBlocks.GRASSY_DUNE_SAND);
+                BiomeVarietyBlocks.GRASSY_DUNE_SAND,
+                BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
+                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
 
         ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> grassColour(blockAndTintGetter, blockPos), BiomeVarietyBlocks.GRASSY_DUNE_SAND);
-        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> foliageColour(blockAndTintGetter, blockPos), BiomeVarietyBlocks.DRY_LEAVES);
+        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> foliageColour(blockAndTintGetter, blockPos),
+                BiomeVarietyBlocks.DRY_LEAVES,
+                BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
+                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
 
         ColorProviderRegistry.ITEM.register((itemStack, i) -> grassColour(null, null), BiomeVarietyBlocks.GRASSY_DUNE_SAND);
-        ColorProviderRegistry.ITEM.register((itemStack, i) -> foliageColour(null, null), BiomeVarietyBlocks.DRY_LEAVES);
+        ColorProviderRegistry.ITEM.register((itemStack, i) -> foliageColour(null, null),
+                BiomeVarietyBlocks.DRY_LEAVES,
+                BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
+                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
     }
 
     public int grassColour(BlockAndTintGetter getter, BlockPos blockPos) {

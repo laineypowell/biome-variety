@@ -3,6 +3,7 @@ package com.laineypowell.biomevariety.block;
 import com.laineypowell.biomevariety.BiomeVariety;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -12,6 +13,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 
 import java.util.Map;
@@ -19,7 +21,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class LogBranchBlock extends HorizontalDirectionalBlock {
-    public static final VoxelShape SHAPE = Shapes.block();
+    public static final VoxelShape SHAPE = Shapes.box(0.1875, 0.1875, 0.5, 0.8125, 0.8125, 1);
 
     private final Map<BlockState, VoxelShape> shapes = getStateDefinition().getPossibleStates().stream().collect(Collectors.toMap(Function.identity(), this::rotateShape));
 
@@ -39,12 +41,30 @@ public class LogBranchBlock extends HorizontalDirectionalBlock {
         return shapes.get(blockState);
     }
 
+    @Override
+    public @Nullable BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+        return defaultBlockState().setValue(FACING, horizontal(blockPlaceContext.getClickedFace()));
+    }
+
+    public Direction horizontal(Direction direction) {
+        return Direction.Plane.VERTICAL.test(direction) ? Direction.NORTH : direction;
+    }
+
     public VoxelShape rotateShape(BlockState blockState) {
         return rotateShape(blockState, SHAPE);
     }
 
     public static VoxelShape rotateShape(BlockState blockState, VoxelShape shape) {
-        return BiomeVariety.rotateShape(shape, new Quaternionf().rotateAxis((float) Math.toRadians(blockState.getValue(FACING).toYRot()), 0.0f, 1.0f, 0.0f));
+        return BiomeVariety.rotateShape(shape, new Quaternionf().rotateAxis((float) Math.toRadians(ordinal(blockState.getValue(FACING)) * 90.0f), 0.0f, 1.0f, 0.0f));
+    }
+
+    public static int ordinal(Direction direction) {
+        return switch (direction) {
+            case NORTH -> 0;
+            case EAST -> 3;
+            case SOUTH -> 2;
+            default -> 1;
+        };
     }
 
 }

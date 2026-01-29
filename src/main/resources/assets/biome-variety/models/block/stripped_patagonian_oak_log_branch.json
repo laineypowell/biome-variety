@@ -1,0 +1,9 @@
+{
+	"parent": "biome-variety:block/patagonian_oak_log_branch",
+	"textures": {
+		"side": "biome-variety:block/stripped_patagonian_oak_log_branch",
+		"top": "biome-variety:block/stripped_patagonian_oak_log_branch_top",
+		"front": "biome-variety:block/stripped_patagonian_oak_log_branch_front",
+		"side_overlay": "biome-variety:block/stripped_patagonian_oak_log_branch_overlay"
+	}
+}

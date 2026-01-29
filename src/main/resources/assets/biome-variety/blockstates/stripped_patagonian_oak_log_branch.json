@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "biome-variety:block/stripped_patagonian_oak_log_branch"
+    },
+    "facing=east": {
+      "model": "biome-variety:block/stripped_patagonian_oak_log_branch",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "biome-variety:block/stripped_patagonian_oak_log_branch",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "biome-variety:block/stripped_patagonian_oak_log_branch",
+      "y": 270
+    }
+  }
+}

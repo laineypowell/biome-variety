@@ -2,6 +2,7 @@ package com.laineypowell.biomevariety.feature;
 
 import com.laineypowell.biomevariety.BiomeVarietyBlocks;
 import com.laineypowell.biomevariety.Structure;
+import com.laineypowell.biomevariety.block.LogBranchBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -24,15 +25,26 @@ public final class PatagonianOakTreeFeature extends Feature<NoneFeatureConfigura
 
         var random = featurePlaceContext.random();
         var j = 6 + random.nextInt(3);
+
+        var previous = false;
         for (var i = 0; i <= j; i++) {
             structure.add(0, i, 0, log);
 
             if (i >= 3) {
                 for (var direction : Direction.Plane.HORIZONTAL) {
-                    if (random.nextInt(3) == 0) {
-                        var normal = direction.getNormal();
-                        structure.add(normal.getX(), i, normal.getZ(), leaves);
+                    var normal = direction.getNormal();
+                    var x = normal.getX();
+                    var z = normal.getZ();
+
+                    if (random.nextInt(2) == 0) {
+                        structure.add(x, i, z, leaves);
                     }
+
+                    if (random.nextInt(12) == 0 && !previous) {
+                        structure.add(x, i, z, BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH.defaultBlockState().setValue(LogBranchBlock.FACING, direction));
+                    }
+
+                    previous = !previous;
                 }
             }
         }
