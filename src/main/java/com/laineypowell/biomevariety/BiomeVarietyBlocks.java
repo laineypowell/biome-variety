@@ -1,5 +1,6 @@
 package com.laineypowell.biomevariety;
 
+import com.cobblemon.mod.common.api.tags.CobblemonBlockTags;
 import com.laineypowell.biomevariety.block.BaobabLogWedgeBlock;
 import com.laineypowell.biomevariety.block.ButtonweedBlock;
 import net.minecraft.core.BlockPos;
@@ -7,12 +8,15 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
@@ -44,6 +48,9 @@ public final class BiomeVarietyBlocks {
         }
     };
 
+    public static final Block PATAGONIAN_OAK_LOG = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
+    public static final Block PATAGONIAN_OAK_WOOD = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
+
     public static final Block SILT_GRASS_BLOCK = new Block(Properties.copy(Blocks.DIRT));
     public static final Block SILT = new Block(Properties.copy(Blocks.DIRT));
     public static final Block SILT_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
@@ -55,7 +62,13 @@ public final class BiomeVarietyBlocks {
     public static final Block ANTARCTIC_ICE_FARMLAND = new Block(Properties.copy(Blocks.BLUE_ICE));
 
     public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
-    public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
+    public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion()) {
+
+        @Override
+        protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+            return super.mayPlaceOn(blockState, blockGetter, blockPos) || blockState.is(Blocks.STONE);
+        }
+    };
 
     public static void register() {
         register("baobab_log", BAOBAB_LOG);
@@ -64,6 +77,9 @@ public final class BiomeVarietyBlocks {
         register("stripped_baobab_wood", STRIPPED_BAOBAB_WOOD);
         register("baobab_log_wedge", BAOBAB_LOG_WEDGE);
         register("stripped_baobab_log_wedge", STRIPPED_BAOBAB_LOG_WEDGE);
+
+        register("patagonian_oak_log", PATAGONIAN_OAK_LOG);
+        register("patagonian_oak_wood", PATAGONIAN_OAK_WOOD);
 
         register("silt_grass_block", SILT_GRASS_BLOCK);
         register("silt", SILT);

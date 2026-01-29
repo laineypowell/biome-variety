@@ -1,0 +1,21 @@
+{
+  "type": "biome-variety:noise_sample",
+  "config": {
+    "block_state": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:stone"
+      }
+    },
+    "block_state_below": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:stone"
+      }
+    },
+    "radius": 14.0,
+    "resolution": 24.0,
+    "grain": 8.0,
+    "threshold": 0.76
+  }
+}

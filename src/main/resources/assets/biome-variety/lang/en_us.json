@@ -5,10 +5,21 @@
   "block.biome-variety.stripped_baobab_wood": "Stripped Baobab Wood",
   "block.biome-variety.baobab_log_wedge": "Baobab Log Wedge",
   "block.biome-variety.stripped_baobab_log_wedge": "Stripped Baobab Log Wedge",
+
+  "block.biome-variety.patagonian_oak_log": "Patagonian Oak Log",
+  "block.biome-variety.patagonian_oak_wood": "Patagonian Oak Wood",
+
   "block.biome-variety.silt_grass_block": "Silt Grass Block",
   "block.biome-variety.silt": "Silt",
   "block.biome-variety.silt_path": "Silt Path",
   "block.biome-variety.silt_farm": "Silt Farm",
+
+  "block.biome-variety.snowy_antarctic_ice": "Snowy Antarctic Ice",
+  "block.biome-variety.antarctic_ice": "Antarctic Ice",
+  "block.biome-variety.antarctic_ice_path": "Antarctic Ice Path",
+  "block.biome-variety.antarctic_ice_farmland": "Antarctic Ice Farmland",
+
   "block.biome-variety.buttonweed": "Buttonweed",
+  "block.biome-variety.violet": "Violet",
   "itemGroup.biome-variety": "Biome Variety"
 }

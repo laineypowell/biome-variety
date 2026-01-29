@@ -43,6 +43,9 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.BAOBAB_LOG_WEDGE);
                             output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG_WEDGE);
 
+                            output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG);
+                            output.accept(BiomeVarietyItems.PATAGONIAN_OAK_WOOD);
+
                             output.accept(BiomeVarietyItems.SILT_GRASS_BLOCK);
                             output.accept(BiomeVarietyItems.SILT);
                             output.accept(BiomeVarietyItems.SILT_PATH);

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "biome-variety:block/patagonian_oak_log_top",
+    "side": "biome-variety:block/patagonian_oak_log"
+  }
+}

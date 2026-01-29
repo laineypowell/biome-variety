@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#biome-variety:baobab_logs"
+    "#biome-variety:baobab_logs",
+    "#biome-variety:patagonian_oak_logs"
   ]
 }

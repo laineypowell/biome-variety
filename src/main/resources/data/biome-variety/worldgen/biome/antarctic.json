@@ -1,11 +1,11 @@
 {
-  "temperature": 1,
+  "temperature": 0.25,
   "downfall": 0,
   "has_precipitation": true,
   "creature_spawn_probability": 0,
   "effects": {
-    "sky_color": 6794735,
-    "fog_color": 11460079,
+    "sky_color": 12306423,
+    "fog_color": 14412537,
     "water_color": 2055855,
     "water_fog_color": 0,
     "grass_color": 15269882,
@@ -17,8 +17,18 @@
   "features": [
     [],
     [
+      "biome-variety:stone_blob"
+    ],
+    [
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower"
+    ],
+    [
       "minecraft:patch_grass_taiga_2",
       "biome-variety:flower_violet"
+    ],
+    [
+      "biome-variety:patagonian_oak_tree"
     ],
     [
       "minecraft:freeze_top_layer"

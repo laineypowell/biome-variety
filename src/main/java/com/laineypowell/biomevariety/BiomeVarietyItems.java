@@ -14,6 +14,9 @@ public final class BiomeVarietyItems {
     public static final Item BAOBAB_LOG_WEDGE = blockItem(BiomeVarietyBlocks.BAOBAB_LOG_WEDGE);
     public static final Item STRIPPED_BAOBAB_LOG_WEDGE = blockItem(BiomeVarietyBlocks.STRIPPED_BAOBAB_LOG_WEDGE);
 
+    public static final Item PATAGONIAN_OAK_LOG = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG);
+    public static final Item PATAGONIAN_OAK_WOOD = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_WOOD);
+
     public static final Item SILT_GRASS_BLOCK = blockItem(BiomeVarietyBlocks.SILT_GRASS_BLOCK);
     public static final Item SILT = blockItem(BiomeVarietyBlocks.SILT);
     public static final Item SILT_PATH = blockItem(BiomeVarietyBlocks.SILT_PATH);
@@ -34,6 +37,9 @@ public final class BiomeVarietyItems {
         register("stripped_baobab_wood", STRIPPED_BAOBAB_WOOD);
         register("baobab_log_wedge", BAOBAB_LOG_WEDGE);
         register("stripped_baobab_log_wedge", STRIPPED_BAOBAB_LOG_WEDGE);
+
+        register("patagonian_oak_log", PATAGONIAN_OAK_LOG);
+        register("patagonian_oak_wood", PATAGONIAN_OAK_WOOD);
 
         register("silt_grass_block", SILT_GRASS_BLOCK);
         register("silt", SILT);

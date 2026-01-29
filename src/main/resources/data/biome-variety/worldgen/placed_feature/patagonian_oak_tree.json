@@ -1,31 +1,33 @@
 {
-  "feature": "minecraft:oak",
+  "feature": "biome-variety:patagonian_oak_tree",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 1
+      "count": 4
     },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 24
+      "chance": 2
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:would_survive",
-        "state": {
-          "Name": "minecraft:oak_sapling",
-          "Properties": {
-            "stage": "0"
-          }
-        }
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "blocks": [
+          "minecraft:grass_block"
+        ]
       }
     },
     {

@@ -15,7 +15,7 @@ public final class BiomeVarietySurfaceRules {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.BAOBAB_PLAINS), surface(SurfaceRules.state(Blocks.SAND.defaultBlockState()), SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState()))),
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.ANTARCTIC), SurfaceRules.sequence(
-                        noise(Noises.POWDER_SNOW, 0.5d,
+                        noise(Noises.POWDER_SNOW, 0.25d,
                                 surface(SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState()), SurfaceRules.state(Blocks.DIRT.defaultBlockState())),
                                 surface(SurfaceRules.state(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.ANTARCTIC_ICE.defaultBlockState())))
                 ))
