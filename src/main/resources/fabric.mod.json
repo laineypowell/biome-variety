@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "biome-variety",
-  "version": "{version}",
+  "version": "${version}",
   "name": "Biome Variety",
   "description": "biomes for Minecraft",
   "authors": [

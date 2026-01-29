@@ -1,11 +1,12 @@
 {
   "temperature": 0.5,
+  "temperature_modifier": "frozen",
   "downfall": 0.25,
   "has_precipitation": true,
   "creature_spawn_probability": 0,
   "effects": {
-    "sky_color": 12306423,
-    "fog_color": 14412537,
+    "sky_color": 9804532,
+    "fog_color": 13616383,
     "water_color": 2055855,
     "water_fog_color": 0,
     "grass_color": 15269882,

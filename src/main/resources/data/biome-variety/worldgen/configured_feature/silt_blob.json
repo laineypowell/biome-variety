@@ -32,9 +32,11 @@
         }
       ]
     },
+    "noise": {
+      "type": "biome-variety:simplex",
+      "grain": 8.0
+    },
     "radius": 8.0,
-    "resolution": 24.0,
-    "grain": 8.0,
     "threshold": 0.075
   }
 }

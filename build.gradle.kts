@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.laineypowell"
-version = "1.0-SNAPSHOT"
+version = "1.1-beta"
 
 repositories {
     mavenCentral()
@@ -35,4 +35,16 @@ java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+tasks.processResources {
+    inputs.property("version", project.version)
+
+    filesMatching("fabric.mod.json") {
+        expand(mapOf("version" to inputs.properties["version"]))
+    }
+}
+
+tasks.remapJar {
+    archiveClassifier.set("1.20.1")
 }
