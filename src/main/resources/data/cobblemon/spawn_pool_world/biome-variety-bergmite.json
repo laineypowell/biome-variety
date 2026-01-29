@@ -17,8 +17,6 @@
       "level": "12-24",
       "weight": 0.1,
       "condition": {
-        "minSkyLight": 8,
-        "maxSkyLight": 15,
         "biomes": [
           "biome-variety:antarctic"
         ]

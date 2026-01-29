@@ -1,7 +1,6 @@
 package com.laineypowell.biomevariety.feature;
 
 import com.laineypowell.biomevariety.FastNoise;
-import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,7 +40,8 @@ public final class NoiseSampleFeature extends Feature<NoiseSampleFeatureConfigur
                         var above = blockPos.above();
                         var surface = !Block.isShapeFullBlock(level.getBlockState(above).getShape(level, above));
 
-                        level.setBlock(blockPos, (surface? config.blockState() : config.blockStateBelow()).getState(featurePlaceContext.random(), blockPos), Block.UPDATE_ALL);
+                        var pair = config.surfaceProvider().getBlockStateProviders();
+                        level.setBlock(blockPos, (surface? pair.left() : pair.right()).getState(featurePlaceContext.random(), blockPos), Block.UPDATE_ALL);
                     }
                 }
             }

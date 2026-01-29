@@ -1,16 +1,19 @@
 {
   "type": "biome-variety:noise_sample",
   "config": {
-    "block_state": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "biome-variety:silt_grass_block"
-      }
-    },
-    "block_state_below": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "biome-variety:silt"
+    "surface_provider": {
+      "type": "biome-variety:split",
+      "on_floor": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "biome-variety:silt_grass_block"
+        }
+      },
+      "under_floor": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "biome-variety:silt"
+        }
       }
     },
     "radius": 8.0,

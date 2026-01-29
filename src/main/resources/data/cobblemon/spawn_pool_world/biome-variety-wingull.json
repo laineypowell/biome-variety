@@ -6,16 +6,16 @@
   "neededUninstalledMods": [],
   "spawns": [
     {
-      "id": "ditto-1",
-      "pokemon": "ditto",
+      "id": "wingull-1",
+      "pokemon": "wingull",
       "presets": [
         "natural"
       ],
       "type": "pokemon",
       "context": "grounded",
-      "bucket": "uncommon",
-      "level": "5-10",
-      "weight": 0.75,
+      "bucket": "common",
+      "level": "6-15",
+      "weight": 0.5,
       "condition": {
         "minSkyLight": 8,
         "maxSkyLight": 15,

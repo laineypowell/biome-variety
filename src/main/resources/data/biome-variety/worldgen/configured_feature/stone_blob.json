@@ -1,16 +1,13 @@
 {
   "type": "biome-variety:noise_sample",
   "config": {
-    "block_state": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:stone"
-      }
-    },
-    "block_state_below": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:stone"
+    "surface_provider": {
+      "type": "biome-variety:single",
+      "block_state": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:stone"
+        }
       }
     },
     "radius": 14.0,
