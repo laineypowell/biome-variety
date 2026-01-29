@@ -33,9 +33,9 @@ public final class BaobabTreeFeature extends Feature<NoneFeatureConfiguration> {
 
         for (var i = 0; i < j; i++) {
             var b = i < j - 3;
-            structure.add(0, i, 0, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.WEST) : log);
+            structure.add(0, i, 0, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.EAST) : log);
             structure.add(1, i, 0, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.SOUTH) : log);
-            structure.add(1, i, 1, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.EAST) : log);
+            structure.add(1, i, 1, b ? wedge.setValue(BaobabLogWedgeBlock.FACING, Direction.WEST) : log);
             structure.add(0, i, 1, b ? wedge : log);
         }
 

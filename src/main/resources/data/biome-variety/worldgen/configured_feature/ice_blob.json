@@ -26,7 +26,7 @@
       "type": "biome-variety:subtract",
       "operand": {
         "type": "biome-variety:simplex",
-        "grain": 6.0
+        "grain": 8.0
       },
       "subtract": {
         "type": "biome-variety:simplex",

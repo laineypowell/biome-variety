@@ -51,9 +51,9 @@ public final class BiomeVarietyBlocks {
     public static final Block DUNE_SAND_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
     public static final Block DUNE_SAND_FARMLAND = new FarmBlock(Properties.copy(Blocks.FARMLAND));
 
-    public static final Block SNOWY_ANTARCTIC_ICE = new Block(Properties.of().sound(SoundType.SNOW).randomTicks());
-    public static final Block ANTARCTIC_ICE = new Block(Properties.copy(Blocks.BLUE_ICE));
-    public static final Block ANTARCTIC_ICE_PATH = new DirtPathBlock(Properties.copy(Blocks.BLUE_ICE)) {
+    public static final Block SNOWY_ANTARCTIC_ICE = new Block(Properties.copy(Blocks.PACKED_ICE).friction(0.6f).sound(SoundType.SNOW).randomTicks());
+    public static final Block ANTARCTIC_ICE = new Block(Properties.copy(Blocks.PACKED_ICE));
+    public static final Block ANTARCTIC_ICE_PATH = new DirtPathBlock(Properties.copy(Blocks.PACKED_ICE)) {
         @Override
         public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
             serverLevel.setBlockAndUpdate(blockPos, ANTARCTIC_ICE.defaultBlockState());

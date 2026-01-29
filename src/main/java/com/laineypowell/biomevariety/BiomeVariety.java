@@ -22,6 +22,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -76,6 +77,9 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
 
         log(BiomeVarietyBlocks.BAOBAB_LOG, BiomeVarietyBlocks.STRIPPED_BAOBAB_LOG);
         log(BiomeVarietyBlocks.BAOBAB_WOOD, BiomeVarietyBlocks.STRIPPED_BAOBAB_WOOD);
+
+        log(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG, Blocks.STRIPPED_OAK_LOG);
+        log(BiomeVarietyBlocks.PATAGONIAN_OAK_WOOD, Blocks.STRIPPED_OAK_WOOD);
 
         dirt(BiomeVarietyBlocks.GRASSY_DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND_FARMLAND);
         dirt(BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND_FARMLAND);
