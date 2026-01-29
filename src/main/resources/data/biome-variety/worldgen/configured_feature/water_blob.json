@@ -1,0 +1,22 @@
+{
+  "type": "biome-variety:noise_sample",
+  "config": {
+    "surface": {
+      "type": "biome-variety:single",
+      "block_state": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:water"
+        }
+      }
+    },
+    "predicate": {
+      "type": "minecraft:matching_blocks",
+      "blocks": "#minecraft:ice"
+    },
+    "radius": 10.0,
+    "resolution": 24.0,
+    "grain": 8.0,
+    "threshold": 0.76
+  }
+}

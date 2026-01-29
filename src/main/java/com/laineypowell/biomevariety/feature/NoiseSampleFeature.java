@@ -1,9 +1,12 @@
 package com.laineypowell.biomevariety.feature;
 
 import com.laineypowell.biomevariety.FastNoise;
+import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
@@ -36,11 +39,11 @@ public final class NoiseSampleFeature extends Feature<NoiseSampleFeatureConfigur
                     var k = (blockPos.getZ() + resolution) / grain;
                     var n = fastNoise.GetNoise(i, j, k);
 
-                    if (canReplace(level.getBlockState(blockPos)) && x * x + y * y + z * z <= r * r && n <= config.threshold()) {
+                    if (!level.isEmptyBlock(blockPos) && config.predicate().test(level, blockPos) && x * x + y * y + z * z <= r * r && n <= config.threshold()) {
                         var above = blockPos.above();
                         var surface = !Block.isShapeFullBlock(level.getBlockState(above).getShape(level, above));
 
-                        var pair = config.surfaceProvider().getBlockStateProviders();
+                        var pair = config.surface().getBlockStateProviders();
                         level.setBlock(blockPos, (surface? pair.left() : pair.right()).getState(featurePlaceContext.random(), blockPos), Block.UPDATE_ALL);
                     }
                 }
@@ -48,10 +51,6 @@ public final class NoiseSampleFeature extends Feature<NoiseSampleFeatureConfigur
         }
 
         return true;
-    }
-
-    public boolean canReplace(BlockState blockState) {
-        return !blockState.isAir() && blockState.getFluidState().isEmpty() && blockState.is(BlockTags.OVERWORLD_CARVER_REPLACEABLES);
     }
 
 }

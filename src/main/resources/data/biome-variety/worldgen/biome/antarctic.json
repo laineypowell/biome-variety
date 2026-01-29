@@ -32,6 +32,9 @@
     ],
     [
       "minecraft:freeze_top_layer"
+    ],
+    [
+      "biome-variety:water_blob"
     ]
   ]
 }
