@@ -6,13 +6,13 @@
       "on_floor": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "biome-variety:silt_grass_block"
+          "Name": "biome-variety:grassy_dune_sand"
         }
       },
       "under_floor": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "biome-variety:silt"
+          "Name": "biome-variety:dune_sand"
         }
       }
     },
@@ -33,10 +33,20 @@
       ]
     },
     "noise": {
-      "type": "biome-variety:simplex",
-      "grain": 4.0
+      "type": "biome-variety:add",
+      "layered": [
+        {
+          "type": "biome-variety:simplex",
+          "grain": 2.0,
+          "scalar": 1.0
+        },
+        {
+          "type": "biome-variety:simplex",
+          "grain": 12.0
+        }
+      ]
     },
-    "radius": 8.0,
-    "threshold": 0.075
+    "radius": 12.0,
+    "threshold": 0.1
   }
 }

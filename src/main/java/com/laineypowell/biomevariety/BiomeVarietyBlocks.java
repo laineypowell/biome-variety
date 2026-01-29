@@ -6,6 +6,8 @@ import com.laineypowell.biomevariety.block.DryLeavesBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
@@ -35,14 +37,19 @@ public final class BiomeVarietyBlocks {
     public static final Block PATAGONIAN_OAK_LOG = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
     public static final Block PATAGONIAN_OAK_WOOD = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
 
-    public static final Block SILT_GRASS_BLOCK = new Block(Properties.copy(Blocks.DIRT));
-    public static final Block SILT = new Block(Properties.copy(Blocks.DIRT));
-    public static final Block SILT_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
-    public static final Block SILT_FARM = new FarmBlock(Properties.copy(Blocks.FARMLAND));
+    public static final Block GRASSY_DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block DUNE_SAND_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
+    public static final Block DUNE_SAND_FARMLAND = new FarmBlock(Properties.copy(Blocks.FARMLAND));
 
     public static final Block SNOWY_ANTARCTIC_ICE = new Block(Properties.of().sound(SoundType.SNOW).randomTicks());
     public static final Block ANTARCTIC_ICE = new Block(Properties.copy(Blocks.BLUE_ICE));
-    public static final Block ANTARCTIC_ICE_PATH = new DirtPathBlock(Properties.copy(Blocks.BLUE_ICE));
+    public static final Block ANTARCTIC_ICE_PATH = new DirtPathBlock(Properties.copy(Blocks.BLUE_ICE)) {
+        @Override
+        public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+            serverLevel.setBlockAndUpdate(blockPos, ANTARCTIC_ICE.defaultBlockState());
+        }
+    };
     public static final Block ANTARCTIC_ICE_FARMLAND = new Block(Properties.copy(Blocks.BLUE_ICE));
 
     public static final Block DRY_LEAVES = new DryLeavesBlock(Properties.of().sound(SoundType.CHERRY_LEAVES).instabreak().noCollission().noOcclusion().noLootTable());
@@ -66,10 +73,10 @@ public final class BiomeVarietyBlocks {
         register("patagonian_oak_log", PATAGONIAN_OAK_LOG);
         register("patagonian_oak_wood", PATAGONIAN_OAK_WOOD);
 
-        register("silt_grass_block", SILT_GRASS_BLOCK);
-        register("silt", SILT);
-        register("silt_path", SILT_PATH);
-        register("silt_farm", SILT_FARM);
+        register("grassy_dune_sand", GRASSY_DUNE_SAND);
+        register("dune_sand", DUNE_SAND);
+        register("dune_sand_path", DUNE_SAND_PATH);
+        register("dune_sand_farmland", DUNE_SAND_FARMLAND);
 
         register("snowy_antarctic_ice", SNOWY_ANTARCTIC_ICE);
         register("antarctic_ice", ANTARCTIC_ICE);

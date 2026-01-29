@@ -17,10 +17,10 @@ public final class BiomeVarietyItems {
     public static final Item PATAGONIAN_OAK_LOG = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG);
     public static final Item PATAGONIAN_OAK_WOOD = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_WOOD);
 
-    public static final Item SILT_GRASS_BLOCK = blockItem(BiomeVarietyBlocks.SILT_GRASS_BLOCK);
-    public static final Item SILT = blockItem(BiomeVarietyBlocks.SILT);
-    public static final Item SILT_PATH = blockItem(BiomeVarietyBlocks.SILT_PATH);
-    public static final Item SILT_FARM = blockItem(BiomeVarietyBlocks.SILT_FARM);
+    public static final Item GRASSY_DUNE_SAND = blockItem(BiomeVarietyBlocks.GRASSY_DUNE_SAND);
+    public static final Item DUNE_SAND = blockItem(BiomeVarietyBlocks.DUNE_SAND);
+    public static final Item DUNE_SAND_PATH = blockItem(BiomeVarietyBlocks.DUNE_SAND_PATH);
+    public static final Item DUNE_SAND_FARMLAND = blockItem(BiomeVarietyBlocks.DUNE_SAND_FARMLAND);
 
     public static final Item SNOWY_ANTARCTIC_ICE = blockItem(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE);
     public static final Item ANTARCTIC_ICE = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE);
@@ -42,10 +42,10 @@ public final class BiomeVarietyItems {
         register("patagonian_oak_log", PATAGONIAN_OAK_LOG);
         register("patagonian_oak_wood", PATAGONIAN_OAK_WOOD);
 
-        register("silt_grass_block", SILT_GRASS_BLOCK);
-        register("silt", SILT);
-        register("silt_path", SILT_PATH);
-        register("silt_farm", SILT_FARM);
+        register("grassy_dune_sand", GRASSY_DUNE_SAND);
+        register("dune_sand", DUNE_SAND);
+        register("dune_sand_path", DUNE_SAND_PATH);
+        register("dune_sand_farmland", DUNE_SAND_FARMLAND);
 
         register("snowy_antarctic_ice", SNOWY_ANTARCTIC_ICE);
         register("antarctic_ice", ANTARCTIC_ICE);

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/grass_block",
+  "textures": {
+    "particle": "#bottom",
+    "bottom": "biome-variety:block/dune_sand",
+    "side": "biome-variety:block/grassy_dune_sand_side",
+    "overlay": "biome-variety:block/grassy_dune_sand_side_overlay"
+  }
+}

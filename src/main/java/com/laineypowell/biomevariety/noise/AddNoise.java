@@ -16,8 +16,15 @@ public record AddNoise(List<Noise> layered) implements Noise {
     @Override
     public float sample(BlockPos blockPos, RandomSource randomSource, FastNoise fastNoise) {
         var result = 0.0f;
+
+        var previous = 0.0f;
         for (var noise : layered) {
-            result += noise.sample(blockPos, randomSource, fastNoise);
+            var f = noise.sample(blockPos, randomSource, fastNoise);
+            if (f >= previous) {
+                result += f;
+            }
+
+            previous = f;
         }
 
         return result;

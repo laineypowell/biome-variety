@@ -1,21 +1,9 @@
 {
-  "feature": "biome-variety:silt_blob",
+  "feature": "biome-variety:grassy_dune_sand_blob",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:weighted_list",
-        "distribution": [
-          {
-            "data": 1,
-            "weight": 2
-          },
-          {
-            "data": 4,
-            "weight": 20
-          }
-        ]
-      }
+      "count": 5
     },
     {
       "type": "minecraft:in_square"

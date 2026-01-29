@@ -18,12 +18,12 @@ public final class BiomeVarietyClient implements ClientModInitializer {
                 BiomeVarietyBlocks.DRY_LEAVES,
                 BiomeVarietyBlocks.BUTTONWEED,
                 BiomeVarietyBlocks.VIOLET,
-                BiomeVarietyBlocks.SILT_GRASS_BLOCK);
+                BiomeVarietyBlocks.GRASSY_DUNE_SAND);
 
-        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> grassColour(blockAndTintGetter, blockPos), BiomeVarietyBlocks.SILT_GRASS_BLOCK);
+        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> grassColour(blockAndTintGetter, blockPos), BiomeVarietyBlocks.GRASSY_DUNE_SAND);
         ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> foliageColour(blockAndTintGetter, blockPos), BiomeVarietyBlocks.DRY_LEAVES);
 
-        ColorProviderRegistry.ITEM.register((itemStack, i) -> grassColour(null, null), BiomeVarietyBlocks.SILT_GRASS_BLOCK);
+        ColorProviderRegistry.ITEM.register((itemStack, i) -> grassColour(null, null), BiomeVarietyBlocks.GRASSY_DUNE_SAND);
         ColorProviderRegistry.ITEM.register((itemStack, i) -> foliageColour(null, null), BiomeVarietyBlocks.DRY_LEAVES);
     }
 

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "biome-variety:silt"
+          "name": "biome-variety:antarctic_ice"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "biome-variety:blocks/silt"
+  "random_sequence": "biome-variety:blocks/antarctic_ice_farmland"
 }

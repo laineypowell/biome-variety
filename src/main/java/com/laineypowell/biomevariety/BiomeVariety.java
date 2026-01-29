@@ -56,10 +56,10 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG);
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_WOOD);
 
-                            output.accept(BiomeVarietyItems.SILT_GRASS_BLOCK);
-                            output.accept(BiomeVarietyItems.SILT);
-                            output.accept(BiomeVarietyItems.SILT_PATH);
-                            output.accept(BiomeVarietyItems.SILT_FARM);
+                            output.accept(BiomeVarietyItems.GRASSY_DUNE_SAND);
+                            output.accept(BiomeVarietyItems.DUNE_SAND);
+                            output.accept(BiomeVarietyItems.DUNE_SAND_PATH);
+                            output.accept(BiomeVarietyItems.DUNE_SAND_FARMLAND);
 
                             output.accept(BiomeVarietyItems.SNOWY_ANTARCTIC_ICE);
                             output.accept(BiomeVarietyItems.ANTARCTIC_ICE);
@@ -75,8 +75,8 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
         log(BiomeVarietyBlocks.BAOBAB_LOG, BiomeVarietyBlocks.STRIPPED_BAOBAB_LOG);
         log(BiomeVarietyBlocks.BAOBAB_WOOD, BiomeVarietyBlocks.STRIPPED_BAOBAB_WOOD);
 
-        dirt(BiomeVarietyBlocks.SILT_GRASS_BLOCK, BiomeVarietyBlocks.SILT_PATH, BiomeVarietyBlocks.SILT_FARM);
-        dirt(BiomeVarietyBlocks.SILT, BiomeVarietyBlocks.SILT_PATH, BiomeVarietyBlocks.SILT_FARM);
+        dirt(BiomeVarietyBlocks.GRASSY_DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND_FARMLAND);
+        dirt(BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND_FARMLAND);
 
         dirt(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE, BiomeVarietyBlocks.ANTARCTIC_ICE_PATH, BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
         dirt(BiomeVarietyBlocks.ANTARCTIC_ICE, BiomeVarietyBlocks.ANTARCTIC_ICE_PATH, BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
