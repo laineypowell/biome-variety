@@ -17,6 +17,9 @@ public final class BiomeVarietyItems {
     public static final Item PATAGONIAN_OAK_LOG = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG);
     public static final Item PATAGONIAN_OAK_WOOD = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_WOOD);
 
+    public static final Item PATAGONIAN_OAK_LOG_BRANCH = blockItem(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH);
+    public static final Item STRIPPED_PATAGONIAN_OAK_LOG_BRANCH = blockItem(BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
+
     public static final Item GRASSY_DUNE_SAND = blockItem(BiomeVarietyBlocks.GRASSY_DUNE_SAND);
     public static final Item DUNE_SAND = blockItem(BiomeVarietyBlocks.DUNE_SAND);
     public static final Item DUNE_SAND_PATH = blockItem(BiomeVarietyBlocks.DUNE_SAND_PATH);
@@ -41,6 +44,8 @@ public final class BiomeVarietyItems {
 
         register("patagonian_oak_log", PATAGONIAN_OAK_LOG);
         register("patagonian_oak_wood", PATAGONIAN_OAK_WOOD);
+        register("patagonian_oak_log_branch", PATAGONIAN_OAK_LOG_BRANCH);
+        register("stripped_patagonian_oak_log_branch", STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
 
         register("grassy_dune_sand", GRASSY_DUNE_SAND);
         register("dune_sand", DUNE_SAND);

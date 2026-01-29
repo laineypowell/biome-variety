@@ -55,6 +55,8 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
 
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG);
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_WOOD);
+                            output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG_BRANCH);
+                            output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
 
                             output.accept(BiomeVarietyItems.GRASSY_DUNE_SAND);
                             output.accept(BiomeVarietyItems.DUNE_SAND);
@@ -105,7 +107,7 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
         return new ResourceLocation(MOD_ID, name);
     }
 
-    public static VoxelShape rotate(VoxelShape shape, Quaternionf quaternionf) {
+    public static VoxelShape rotateShape(VoxelShape shape, Quaternionf quaternionf) {
         var matrix4f = new Matrix4f();
         matrix4f.translate(0.5f, 0.5f, 0.5f);
         matrix4f.rotate(quaternionf);
