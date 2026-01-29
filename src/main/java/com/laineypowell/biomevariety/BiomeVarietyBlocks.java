@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -61,6 +62,12 @@ public final class BiomeVarietyBlocks {
     };
     public static final Block ANTARCTIC_ICE_FARMLAND = new Block(Properties.copy(Blocks.BLUE_ICE));
 
+    public static final Block SAVANNA_GRASS = new DoublePlantBlock(Properties.copy(Blocks.TALL_GRASS)) {
+        @Override
+        protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
+            return super.mayPlaceOn(blockState, blockGetter, blockPos) || blockState.is(BlockTags.SAND);
+        }
+    };
     public static final Block DRY_LEAVES = new DryLeavesBlock(Properties.of().sound(SoundType.CHERRY_LEAVES).instabreak().noCollission().noOcclusion().noLootTable());
     public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
     public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion().offsetType(BlockBehaviour.OffsetType.XZ)) {
@@ -94,6 +101,7 @@ public final class BiomeVarietyBlocks {
         register("antarctic_ice_path", ANTARCTIC_ICE_PATH);
         register("antarctic_ice_farmland", ANTARCTIC_ICE_FARMLAND);
 
+        register("savanna_grass", SAVANNA_GRASS);
         register("dry_leaves", DRY_LEAVES);
         register("buttonweed", BUTTONWEED);
         register("violet", VIOLET);

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "biome-variety:block/savanna_grass_bottom"
+    },
+    "half=upper": {
+      "model": "biome-variety:block/savanna_grass_top"
+    }
+  }
+}

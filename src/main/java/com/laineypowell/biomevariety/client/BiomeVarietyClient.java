@@ -15,6 +15,7 @@ public final class BiomeVarietyClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
+                BiomeVarietyBlocks.SAVANNA_GRASS,
                 BiomeVarietyBlocks.DRY_LEAVES,
                 BiomeVarietyBlocks.BUTTONWEED,
                 BiomeVarietyBlocks.VIOLET,

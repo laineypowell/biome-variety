@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "biome-variety:block/savanna_grass_bottom"
+  }
+}

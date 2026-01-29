@@ -30,6 +30,7 @@ public final class BiomeVarietyItems {
     public static final Item ANTARCTIC_ICE_PATH = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE_PATH);
     public static final Item ANTARCTIC_ICE_FARMLAND = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
 
+    public static final Item SAVANNA_GRASS = blockItem(BiomeVarietyBlocks.SAVANNA_GRASS);
     public static final Item DRY_LEAVES = blockItem(BiomeVarietyBlocks.DRY_LEAVES);
     public static final Item BUTTONWEED = blockItem(BiomeVarietyBlocks.BUTTONWEED);
     public static final Item VIOLET = blockItem(BiomeVarietyBlocks.VIOLET);
@@ -57,6 +58,7 @@ public final class BiomeVarietyItems {
         register("antarctic_ice_path", ANTARCTIC_ICE_PATH);
         register("antarctic_ice_farmland", ANTARCTIC_ICE_FARMLAND);
 
+        register("savanna_grass", SAVANNA_GRASS);
         register("dry_leaves", DRY_LEAVES);
         register("buttonweed", BUTTONWEED);
         register("violet", VIOLET);

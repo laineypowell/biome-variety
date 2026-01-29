@@ -26,7 +26,6 @@ public final class PatagonianOakTreeFeature extends Feature<NoneFeatureConfigura
         var random = featurePlaceContext.random();
         var j = 6 + random.nextInt(3);
 
-        var previous = false;
         for (var i = 0; i <= j; i++) {
             structure.add(0, i, 0, log);
 
@@ -40,11 +39,9 @@ public final class PatagonianOakTreeFeature extends Feature<NoneFeatureConfigura
                         structure.add(x, i, z, leaves);
                     }
 
-                    if (random.nextInt(12) == 0 && !previous) {
+                    if (random.nextInt(12) == 0 && i <= j - 1) {
                         structure.add(x, i, z, BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH.defaultBlockState().setValue(LogBranchBlock.FACING, direction));
                     }
-
-                    previous = !previous;
                 }
             }
         }

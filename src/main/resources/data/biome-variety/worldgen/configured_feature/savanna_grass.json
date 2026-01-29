@@ -8,7 +8,10 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "biome-variety:dry_leaves"
+              "Name": "biome-variety:savanna_grass",
+              "Properties": {
+                "half": "lower"
+              }
             }
           }
         }
@@ -23,8 +26,8 @@
         }
       ]
     },
-    "tries": 64,
-    "xz_spread": 7,
+    "tries": 96,
+    "xz_spread": 6,
     "y_spread": 3
   }
 }
