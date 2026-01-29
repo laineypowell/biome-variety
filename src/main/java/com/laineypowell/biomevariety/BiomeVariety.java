@@ -9,11 +9,21 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FlattenableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Matrix4f;
@@ -111,5 +121,32 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
 
         return rotatedShape;
     }
+
+    @SuppressWarnings("unchecked")
+    public static InteractionResult stripInteraction(Player player, InteractionHand hand, Level level, BlockPos blockPos, BlockState blockState, Block stripped) {
+        if (player != null) {
+            var itemStack = player.getItemInHand(hand);
+            if (itemStack.is(ItemTags.AXES)) {
+                var clientSided = level.isClientSide;
+                if (clientSided) {
+                    level.playSound(player, blockPos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0f, 1.0f);
+                } else {
+                    var result = stripped.defaultBlockState();
+                    for (var entry : blockState.getValues().entrySet()) {
+                        result = result.setValue((Property) entry.getKey(), (Comparable) entry.getValue());
+                    }
+
+                    if (level.setBlock(blockPos, result, Block.UPDATE_ALL_IMMEDIATE)) {
+                        itemStack.hurtAndBreak(1, player, thePlayer -> thePlayer.broadcastBreakEvent(hand));
+                    }
+                }
+
+                return InteractionResult.sidedSuccess(clientSided);
+            }
+        }
+
+        return InteractionResult.PASS;
+    }
+
 
 }

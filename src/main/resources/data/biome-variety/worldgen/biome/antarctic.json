@@ -1,5 +1,5 @@
 {
-  "temperature": -0.75,
+  "temperature": 0.5,
   "downfall": 0.25,
   "has_precipitation": true,
   "creature_spawn_probability": 0,
@@ -34,7 +34,7 @@
       "minecraft:freeze_top_layer"
     ],
     [
-      "biome-variety:water_blob"
+      "biome-variety:ice_blob"
     ]
   ]
 }

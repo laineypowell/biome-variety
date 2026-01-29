@@ -1,23 +1,18 @@
 package com.laineypowell.biomevariety;
 
-import com.cobblemon.mod.common.api.tags.CobblemonBlockTags;
 import com.laineypowell.biomevariety.block.BaobabLogWedgeBlock;
 import com.laineypowell.biomevariety.block.ButtonweedBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -32,19 +27,7 @@ public final class BiomeVarietyBlocks {
     public static final Block BAOBAB_LOG_WEDGE = new BaobabLogWedgeBlock(Properties.copy(Blocks.OAK_PLANKS)) {
         @Override
         public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-            var itemStack = player.getItemInHand(interactionHand);
-            if (itemStack.getItem() instanceof AxeItem) {
-                var client = level.isClientSide;
-                if (!client) {
-                    level.setBlock(blockPos, STRIPPED_BAOBAB_LOG_WEDGE.defaultBlockState().setValue(BaobabLogWedgeBlock.FACING, blockState.getValue(BaobabLogWedgeBlock.FACING)), 11);
-                } else {
-                    level.playSound(player, blockPos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0f, 1.0f);
-                }
-                return InteractionResult.sidedSuccess(client);
-
-            }
-
-            return InteractionResult.PASS;
+            return BiomeVariety.stripInteraction(player, interactionHand, level, blockPos, blockState, STRIPPED_BAOBAB_LOG_WEDGE);
         }
     };
 
@@ -62,7 +45,7 @@ public final class BiomeVarietyBlocks {
     public static final Block ANTARCTIC_ICE_FARMLAND = new Block(Properties.copy(Blocks.BLUE_ICE));
 
     public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
-    public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion()) {
+    public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion().offsetType(BlockBehaviour.OffsetType.XZ)) {
 
         @Override
         protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {

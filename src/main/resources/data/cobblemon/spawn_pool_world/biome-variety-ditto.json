@@ -21,6 +21,9 @@
         "maxSkyLight": 15,
         "biomes": [
           "biome-variety:antarctic"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:grass_block"
         ]
       }
     }

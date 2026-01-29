@@ -2,11 +2,10 @@ package com.laineypowell.biomevariety.feature;
 
 import com.laineypowell.biomevariety.FastNoise;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
@@ -34,14 +33,15 @@ public final class NoiseSampleFeature extends Feature<NoiseSampleFeatureConfigur
                             Math.round(z)
                     );
 
-                    var i = (blockPos.getX() + resolution) / grain;
-                    var j = (blockPos.getY() + resolution) / grain;
-                    var k = (blockPos.getZ() + resolution) / grain;
+                    var i = (blockPos.getX() / 2.0f) * config.grain();
+                    var j = (blockPos.getY() / 2.0f) * config.grain();
+                    var k = (blockPos.getZ() / 2.0f) * config.grain();
                     var n = fastNoise.GetNoise(i, j, k);
 
-                    if (!level.isEmptyBlock(blockPos) && config.predicate().test(level, blockPos) && x * x + y * y + z * z <= r * r && n <= config.threshold()) {
-                        var above = blockPos.above();
-                        var surface = !Block.isShapeFullBlock(level.getBlockState(above).getShape(level, above));
+                    if (!level.isEmptyBlock(blockPos) && config.predicate().test(level, blockPos) && x * x + y * y + z * z <= r * r && n >= config.threshold()) {
+                        var worldSurface = level.getBlockState(blockPos.above());
+
+                        var surface = worldSurface.isAir() || worldSurface.getBlock() instanceof BushBlock;
 
                         var pair = config.surface().getBlockStateProviders();
                         level.setBlock(blockPos, (surface? pair.left() : pair.right()).getState(featurePlaceContext.random(), blockPos), Block.UPDATE_ALL);
@@ -51,6 +51,10 @@ public final class NoiseSampleFeature extends Feature<NoiseSampleFeatureConfigur
         }
 
         return true;
+    }
+
+    public BlockPos worldSurface(BlockPos blockPos, WorldGenLevel level) {
+        return blockPos.atY(level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, blockPos.getX(), blockPos.getZ()));
     }
 
 }
