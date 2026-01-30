@@ -1,5 +1,6 @@
 package com.laineypowell.biomevariety.block;
 
+import com.laineypowell.biomevariety.Structure;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -45,12 +46,12 @@ public final class LeavesAwningBlock extends Block {
     public boolean canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
         var hasFace = false;
         for (var direction : Direction.Plane.HORIZONTAL) {
-            if (blockState.getValue(MAP.get(direction)) && levelReader.getBlockState(blockPos.relative(direction.getOpposite())).is(BlockTags.LEAVES)) {
+            if (blockState.getValue(MAP.get(direction)) && isLeaves(levelReader.getBlockState(blockPos.relative(direction.getOpposite())))) {
                 hasFace = true;
                 break;
             }
         }
-        return hasFace;
+        return true; //hasFace;
     }
 
     @Override
@@ -59,6 +60,23 @@ public final class LeavesAwningBlock extends Block {
         var property = MAP.get(direction);
 
         return defaultBlockState().setValue(property, true);
+    }
+
+    public BlockState blockState(Structure structure, BlockPos blockPos) {
+        var blockState = defaultBlockState();
+        for (var direction : Direction.Plane.HORIZONTAL) {
+            var l = blockPos.relative(direction.getOpposite()).asLong();
+
+            if (isLeaves(structure.get(l))) {
+                blockState = blockState.setValue(MAP.get(direction), true);
+            }
+        }
+
+        return blockState;
+    }
+
+    public boolean isLeaves(BlockState blockState) {
+        return blockState.is(BlockTags.LEAVES);
     }
 
 }

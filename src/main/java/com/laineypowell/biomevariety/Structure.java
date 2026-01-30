@@ -12,6 +12,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
@@ -43,9 +44,15 @@ public final class Structure {
         if (!blockStates.contains(blockState)) {
             blockStates.add(blockState);
         }
+
         var i = blockStates.indexOf(blockState);
         lists.computeIfAbsent(i, j -> new LongArrayList()).add(l);
-        blocks.put(BlockPos.asLong(x, y, z), i);
+
+        if (blockState.is(BlockTags.LOGS)) {
+            blocks.put(l, i);
+        } else {
+            blocks.putIfAbsent(l, i);
+        }
     }
 
     public void place(WorldGenLevel level, BlockPos blockPos) {
@@ -61,6 +68,10 @@ public final class Structure {
             level.setBlock(blockPos, blockState, Block.UPDATE_ALL);
             level.scheduleTick(blockPos, blockState.getBlock(), 1);
         }
+    }
+
+    public BlockState get(long l) {
+        return blocks.containsKey(l) ? blockStates.get(blocks.get(l)) : Blocks.AIR.defaultBlockState();
     }
 
     public Iterator<BlockPos> iterator(BlockState blockState) {
