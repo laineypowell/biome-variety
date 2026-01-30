@@ -69,6 +69,12 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.ANTARCTIC_ICE_PATH);
                             output.accept(BiomeVarietyItems.ANTARCTIC_ICE_FARMLAND);
 
+                            output.accept(BiomeVarietyItems.GRASSY_WEATHERED_DIRT);
+                            output.accept(BiomeVarietyItems.WEATHERED_DIRT);
+                            output.accept(BiomeVarietyItems.WEATHERED_DIRT_PATH);
+                            output.accept(BiomeVarietyItems.WEATHERED_DIRT_FARMLAND);
+
+                            output.accept(BiomeVarietyItems.SAVANNA_GRASS);
                             output.accept(BiomeVarietyItems.DRY_LEAVES);
                             output.accept(BiomeVarietyItems.BUTTONWEED);
                             output.accept(BiomeVarietyItems.VIOLET);

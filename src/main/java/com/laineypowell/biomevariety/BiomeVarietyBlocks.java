@@ -62,6 +62,11 @@ public final class BiomeVarietyBlocks {
     };
     public static final Block ANTARCTIC_ICE_FARMLAND = new Block(Properties.copy(Blocks.BLUE_ICE));
 
+    public static final Block GRASSY_WEATHERED_DIRT = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block WEATHERED_DIRT = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block WEATHERED_DIRT_PATH = new Block(Properties.copy(Blocks.DIRT_PATH));
+    public static final Block WEATHERED_DIRT_FARMLAND = new Block(Properties.copy(Blocks.FARMLAND));
+
     public static final Block SAVANNA_GRASS = new DoublePlantBlock(Properties.copy(Blocks.TALL_GRASS)) {
         @Override
         protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
@@ -100,6 +105,11 @@ public final class BiomeVarietyBlocks {
         register("antarctic_ice", ANTARCTIC_ICE);
         register("antarctic_ice_path", ANTARCTIC_ICE_PATH);
         register("antarctic_ice_farmland", ANTARCTIC_ICE_FARMLAND);
+
+        register("grassy_weathered_dirt", GRASSY_WEATHERED_DIRT);
+        register("weathered_dirt", WEATHERED_DIRT);
+        register("weathered_dirt_path", WEATHERED_DIRT_PATH);
+        register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
 
         register("savanna_grass", SAVANNA_GRASS);
         register("dry_leaves", DRY_LEAVES);

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#biome-variety:dune_sand"
+    "#biome-variety:dune_sand",
+    "#biome-variety:weathered_dirt"
   ]
 }

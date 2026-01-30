@@ -18,7 +18,9 @@ public final class BiomeVarietySurfaceRules {
                         noise(Noises.POWDER_SNOW, 0.25d,
                                 surface(SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState()), SurfaceRules.state(Blocks.DIRT.defaultBlockState())),
                                 surface(SurfaceRules.state(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.ANTARCTIC_ICE.defaultBlockState())))
-                ))
+                )),
+
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.REDWOOD_FOREST), surface(SurfaceRules.state(BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.WEATHERED_DIRT.defaultBlockState())))
         );
     }
 

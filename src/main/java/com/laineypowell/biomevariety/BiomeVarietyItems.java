@@ -30,6 +30,11 @@ public final class BiomeVarietyItems {
     public static final Item ANTARCTIC_ICE_PATH = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE_PATH);
     public static final Item ANTARCTIC_ICE_FARMLAND = blockItem(BiomeVarietyBlocks.ANTARCTIC_ICE_FARMLAND);
 
+    public static final Item GRASSY_WEATHERED_DIRT = blockItem(BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT);
+    public static final Item WEATHERED_DIRT = blockItem(BiomeVarietyBlocks.WEATHERED_DIRT);
+    public static final Item WEATHERED_DIRT_PATH = blockItem(BiomeVarietyBlocks.WEATHERED_DIRT_PATH);
+    public static final Item WEATHERED_DIRT_FARMLAND = blockItem(BiomeVarietyBlocks.WEATHERED_DIRT_FARMLAND);
+
     public static final Item SAVANNA_GRASS = blockItem(BiomeVarietyBlocks.SAVANNA_GRASS);
     public static final Item DRY_LEAVES = blockItem(BiomeVarietyBlocks.DRY_LEAVES);
     public static final Item BUTTONWEED = blockItem(BiomeVarietyBlocks.BUTTONWEED);
@@ -57,6 +62,11 @@ public final class BiomeVarietyItems {
         register("antarctic_ice", ANTARCTIC_ICE);
         register("antarctic_ice_path", ANTARCTIC_ICE_PATH);
         register("antarctic_ice_farmland", ANTARCTIC_ICE_FARMLAND);
+
+        register("grassy_weathered_dirt", GRASSY_WEATHERED_DIRT);
+        register("weathered_dirt", WEATHERED_DIRT);
+        register("weathered_dirt_path", WEATHERED_DIRT_PATH);
+        register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
 
         register("savanna_grass", SAVANNA_GRASS);
         register("dry_leaves", DRY_LEAVES);

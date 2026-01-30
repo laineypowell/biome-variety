@@ -22,5 +22,6 @@ public final class BiomeVarietyRegion extends Region {
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
         addBiome(mapper, ParameterUtils.Temperature.WARM.parameter(), ParameterUtils.Humidity.ARID.parameter(), ParameterUtils.Continentalness.MID_INLAND.parameter(), ParameterUtils.Erosion.EROSION_4.parameter(), ParameterUtils.Weirdness.LOW_SLICE_VARIANT_ASCENDING.parameter(), ParameterUtils.Depth.SURFACE.parameter(), 0.0f, BiomeVarietyBiomes.BAOBAB_PLAINS);
         addBiome(mapper, ParameterUtils.Temperature.FROZEN.parameter(), ParameterUtils.Humidity.DRY.parameter(), ParameterUtils.Continentalness.NEAR_INLAND.parameter(), ParameterUtils.Erosion.EROSION_0.parameter(), ParameterUtils.Weirdness.PEAK_VARIANT.parameter(), ParameterUtils.Depth.SURFACE.parameter(), 0.0f, BiomeVarietyBiomes.ANTARCTIC);
+        addBiome(mapper, ParameterUtils.Temperature.span(ParameterUtils.Temperature.NEUTRAL, ParameterUtils.Temperature.COOL), ParameterUtils.Humidity.NEUTRAL.parameter(), ParameterUtils.Continentalness.MID_INLAND.parameter(), ParameterUtils.Erosion.span(ParameterUtils.Erosion.EROSION_1, ParameterUtils.Erosion.EROSION_3), ParameterUtils.Weirdness.PEAK_NORMAL.parameter(), ParameterUtils.Depth.SURFACE.parameter(), 0.0f, BiomeVarietyBiomes.REDWOOD_FOREST);
     }
 }
