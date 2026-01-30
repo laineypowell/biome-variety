@@ -1,0 +1,66 @@
+{
+  "variants": {
+    "facing=north,log_root=left": {
+      "model": "biome-variety:block/redwood_log_root_left"
+    },
+    "facing=north,log_root=right": {
+      "model": "biome-variety:block/redwood_log_root_right"
+    },
+    "facing=north,log_root=top_left": {
+      "model": "biome-variety:block/redwood_log_root_top_left"
+    },
+    "facing=north,log_root=top_right": {
+      "model": "biome-variety:block/redwood_log_root_top_right"
+    },
+
+    "facing=east,log_root=left": {
+      "model": "biome-variety:block/redwood_log_root_left",
+      "y": 90
+    },
+    "facing=east,log_root=right": {
+      "model": "biome-variety:block/redwood_log_root_right",
+      "y": 90
+    },
+    "facing=east,log_root=top_left": {
+      "model": "biome-variety:block/redwood_log_root_top_left",
+      "y": 90
+    },
+    "facing=east,log_root=top_right": {
+      "model": "biome-variety:block/redwood_log_root_top_right",
+      "y": 90
+    },
+    "facing=south,log_root=left": {
+      "model": "biome-variety:block/redwood_log_root_left",
+      "y": 180
+    },
+    "facing=south,log_root=right": {
+      "model": "biome-variety:block/redwood_log_root_right",
+      "y": 180
+    },
+    "facing=south,log_root=top_left": {
+      "model": "biome-variety:block/redwood_log_root_top_left",
+      "y": 180
+    },
+    "facing=south,log_root=top_right": {
+      "model": "biome-variety:block/redwood_log_root_top_right",
+      "y": 180
+    },
+
+    "facing=west,log_root=left": {
+      "model": "biome-variety:block/redwood_log_root_left",
+      "y": 270
+    },
+    "facing=west,log_root=right": {
+      "model": "biome-variety:block/redwood_log_root_right",
+      "y": 270
+    },
+    "facing=west,log_root=top_left": {
+      "model": "biome-variety:block/redwood_log_root_top_left",
+      "y": 270
+    },
+    "facing=west,log_root=top_right": {
+      "model": "biome-variety:block/redwood_log_root_top_right",
+      "y": 270
+    }
+  }
+}

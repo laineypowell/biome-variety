@@ -11,6 +11,9 @@
   "block.biome-variety.patagonian_oak_log_branch": "Patagonian Oak Log Branch",
   "block.biome-variety.stripped_patagonian_oak_log_branch": "Stripped Patagonian Oak Log Branch",
 
+  "block.biome-variety.shrub_leaves": "Shrub Leaves",
+  "block.biome-variety.shrub_leaves_awning": "Shrub Leaves Awning",
+
   "block.biome-variety.grassy_dune_sand": "Grassy Dune Sand",
   "block.biome-variety.dune_sand": "Dune Sand",
   "block.biome-variety.dune_sand_path": "Dune Sand Path",
@@ -21,6 +24,12 @@
   "block.biome-variety.antarctic_ice_path": "Antarctic Ice Path",
   "block.biome-variety.antarctic_ice_farmland": "Antarctic Ice Farmland",
 
+  "block.biome-variety.grassy_weathered_dirt": "Grassy Weathered Dirt",
+  "block.biome-variety.weathered_dirt": "Weathered Dirt",
+  "block.biome-variety.weathered_dirt_path": "Weathered Dirt Path",
+  "block.biome-variety.weathered_dirt_farmland": "Weathered Dirt Farmland",
+
+  "block.biome-variety.savanna_grass": "Savanna Grass",
   "block.biome-variety.dry_leaves": "Dry Leaves",
   "block.biome-variety.buttonweed": "Buttonweed",
   "block.biome-variety.violet": "Violet",

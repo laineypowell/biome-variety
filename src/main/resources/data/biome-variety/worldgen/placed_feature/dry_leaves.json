@@ -19,11 +19,9 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:matching_blocks",
+        "type": "minecraft:matching_block_tag",
         "offset": [0, -1, 0],
-        "blocks": [
-          "minecraft:grass_block"
-        ]
+        "tag": "minecraft:dirt"
       }
     },
     {

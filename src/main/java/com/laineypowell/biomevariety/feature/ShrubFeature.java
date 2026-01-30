@@ -22,14 +22,16 @@ public final class ShrubFeature extends Feature<ShrubFeatureConfiguration> {
         structure.add(0, 0, 0, config.log(), random);
 
         var leaves = config.leaves();
-        switch (random.nextInt(3)) {
-            default -> {
-                for (var direction : new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.UP}) {
-                    var normal = direction.getNormal();
+        var r = 1;
+        var l = 2 + random.nextInt(2);
+        for (var x = -r; x <= r; x++) {
+            for (var y = 0; y <= r; y++) {
+                for (var z = -r; z <= r; z++) {
+                    if (x * x + y * y + z * z < l) {
+                        structure.add(x, y, z, leaves, random);
+                    }
 
-                    structure.add(normal.getX(), normal.getY(), normal.getZ(), leaves, random);
                 }
-
             }
         }
 

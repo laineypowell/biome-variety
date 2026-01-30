@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "biome-variety:block/savanna_grass_top"
+  }
+}

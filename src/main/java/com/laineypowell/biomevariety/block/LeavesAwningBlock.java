@@ -51,7 +51,7 @@ public final class LeavesAwningBlock extends Block {
                 break;
             }
         }
-        return true; //hasFace;
+        return hasFace;
     }
 
     @Override

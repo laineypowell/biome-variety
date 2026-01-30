@@ -58,7 +58,7 @@ public final class BiomeVarietyBlocks {
     public static final Block STRIPPED_REDWOOD_LOG_ROOT = new LogRootBlock(Properties.copy(Blocks.OAK_PLANKS));
 
     public static final Block SHRUB_LEAVES = new LeavesBlock(Properties.copy(Blocks.OAK_LEAVES));
-    public static final LeavesAwningBlock SHRUB_LEAVES_AWNING = new LeavesAwningBlock(Properties.of().sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion());
+    public static final LeavesAwningBlock SHRUB_LEAVES_AWNING = new LeavesAwningBlock(Properties.of().replaceable().sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion());
 
     public static final Block GRASSY_DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
     public static final Block DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));

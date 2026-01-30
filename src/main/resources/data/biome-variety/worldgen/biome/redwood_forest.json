@@ -18,7 +18,13 @@
     [],
     [
       "biome-variety:coarse_dirt_blob",
-      "minecraft:patch_grass_taiga_2"
+      "biome-variety:shrub",
+      "biome-variety:dry_leaves",
+      "minecraft:patch_grass_plain"
+    ],
+    [
+      "biome-variety:redwood_tree",
+      "biome-variety:large_redwood_tree"
     ],
     [
       "minecraft:freeze_top_layer"
