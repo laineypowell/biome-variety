@@ -1,9 +1,10 @@
 package com.laineypowell.biomevariety;
 
-import it.unimi.dsi.fastutil.ints.Int2IntMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.IntList;
-import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.longs.Long2IntArrayMap;
+import it.unimi.dsi.fastutil.longs.Long2IntMap;
+import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongList;
 import it.unimi.dsi.fastutil.objects.ObjectIterators;
 import net.minecraft.core.BlockPos;
@@ -11,63 +12,47 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 public final class Structure {
     private final List<BlockState> blockStates;
 
     private final Int2ObjectMap<LongList> lists;
-    private final Int2IntMap blocks;
+    private final Long2IntMap blocks;
 
-    private Structure(List<BlockState> blockStates, Int2ObjectMap<LongList> lists, Int2IntMap blocks) {
+    private final BlockPos.MutableBlockPos blockPos = new BlockPos.MutableBlockPos();
+
+    private Structure(List<BlockState> blockStates, Int2ObjectMap<LongList> lists, Long2IntMap blocks) {
         this.blockStates = blockStates;
         this.lists = lists;
         this.blocks = blocks;
     }
 
     public void add(int x, int y, int z, BlockStateProvider provider, RandomSource randomSource) {
-        var blockPos = new BlockPos(x, y, z);
-        add(blockPos, provider.getState(randomSource, blockPos));
+        add(x, y, z, provider.getState(randomSource, blockPos.set(x, y, z)));
     }
 
     public void add(int x, int y, int z, BlockState blockState) {
-        add(new BlockPos(x, y, z), blockState);
-    }
+        var l = BlockPos.asLong(x, y, z);
 
-    public void add(BlockPos blockPos, BlockState blockState) {
-        if (map.containsKey(blockPos) && map.get(blockPos).is(BlockTags.LEAVES) && !blockState.is(BlockTags.LEAVES)) {
-            map.put(blockPos, blockState);
-            return;
+        if (!blockStates.contains(blockState)) {
+            blockStates.add(blockState);
         }
-
-        map.putIfAbsent(blockPos, blockState);
-    }
-
-    public Structure rotate(RandomSource randomSource) {
-        return rotate(Rotation.getRandom(randomSource));
-    }
-
-    public Structure rotate(Rotation rotation) {
-        Map<BlockPos, BlockState> map = new HashMap<>();
-        for (var entry : this.map.entrySet()) {
-            map.put(entry.getKey().rotate(rotation), entry.getValue().rotate(rotation));
-        }
-
-        return new Structure(map);
+        var i = blockStates.indexOf(blockState);
+        lists.computeIfAbsent(i, j -> new LongArrayList()).add(l);
+        blocks.put(BlockPos.asLong(x, y, z), i);
     }
 
     public void place(WorldGenLevel level, BlockPos blockPos) {
-        for (var entry : map.entrySet()) {
-            setBlock(level, entry.getKey().offset(blockPos), entry.getValue());
+        for (var entry : blocks.long2IntEntrySet()) {
+            var l = entry.getLongKey();
+            setBlock(level, blockPos.offset(BlockPos.getX(l), BlockPos.getY(l), BlockPos.getZ(l)), blockStates.get(entry.getIntValue()));
         }
-
     }
 
     private void setBlock(WorldGenLevel level, BlockPos blockPos, BlockState blockState) {
@@ -82,7 +67,6 @@ public final class Structure {
         var i = blockStates.indexOf(blockState);
         if (lists.containsKey(i)) {
             var iterator = lists.get(i).longIterator();
-            var blockPos = new BlockPos.MutableBlockPos();
             return new Iterator<>() {
                 @Override
                 public boolean hasNext() {
@@ -92,15 +76,20 @@ public final class Structure {
                 @Override
                 public BlockPos next() {
                     var l = iterator.nextLong();
-                    var x = (int) (l & 0x1FFFFFF);
-                    var y = (int) ((l >> 21) & 0x1FFFFFF);
-                    var z = (int) ((l >> 42) & 0x1FFFFFF);
-                    return blockPos.set(x, y, z);
+                    return blockPos.set(
+                            BlockPos.getX(l),
+                            BlockPos.getY(l),
+                            BlockPos.getZ(l)
+                    );
                 }
             };
         }
 
         return ObjectIterators.emptyIterator();
+    }
+
+    public static Structure structure() {
+        return new Structure(new ArrayList<>(), new Int2ObjectArrayMap<>(), new Long2IntArrayMap());
     }
 
 }
