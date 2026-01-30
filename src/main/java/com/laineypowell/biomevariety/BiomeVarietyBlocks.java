@@ -1,9 +1,6 @@
 package com.laineypowell.biomevariety;
 
-import com.laineypowell.biomevariety.block.BaobabLogWedgeBlock;
-import com.laineypowell.biomevariety.block.ButtonweedBlock;
-import com.laineypowell.biomevariety.block.DryLeavesBlock;
-import com.laineypowell.biomevariety.block.LogBranchBlock;
+import com.laineypowell.biomevariety.block.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -38,7 +35,8 @@ public final class BiomeVarietyBlocks {
 
     public static final Block PATAGONIAN_OAK_LOG = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
     public static final Block PATAGONIAN_OAK_WOOD = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
-
+    public static final Block STRIPPED_PATAGONIAN_OAK_LOG = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
+    public static final Block STRIPPED_PATAGONIAN_OAK_WOOD = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
     public static final Block PATAGONIAN_OAK_LOG_BRANCH = new LogBranchBlock(Properties.copy(Blocks.OAK_PLANKS)) {
         @Override
         public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
@@ -46,6 +44,18 @@ public final class BiomeVarietyBlocks {
         }
     };
     public static final Block STRIPPED_PATAGONIAN_OAK_LOG_BRANCH = new LogBranchBlock(Properties.copy(Blocks.OAK_PLANKS));
+
+    public static final Block REDWOOD_LOG = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
+    public static final Block REDWOOD_WOOD = new RotatedPillarBlock(Properties.copy(Blocks.OAK_WOOD));
+    public static final Block STRIPPED_REDWOOD_LOG = new RotatedPillarBlock(Properties.copy(Blocks.STRIPPED_OAK_LOG));
+    public static final Block STRIPPED_REDWOOD_WOOD = new RotatedPillarBlock(Properties.copy(Blocks.STRIPPED_OAK_WOOD));
+    public static final Block REDWOOD_LOG_ROOT = new LogRootBlock(Properties.copy(Blocks.OAK_PLANKS)) {
+        @Override
+        public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
+            return BiomeVariety.stripInteraction(player, interactionHand, level, blockPos, blockState, STRIPPED_REDWOOD_LOG_ROOT);
+        }
+    };
+    public static final Block STRIPPED_REDWOOD_LOG_ROOT = new LogRootBlock(Properties.copy(Blocks.OAK_PLANKS));
 
     public static final Block GRASSY_DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
     public static final Block DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
@@ -93,8 +103,17 @@ public final class BiomeVarietyBlocks {
 
         register("patagonian_oak_log", PATAGONIAN_OAK_LOG);
         register("patagonian_oak_wood", PATAGONIAN_OAK_WOOD);
+        register("stripped_patagonian_oak_log", STRIPPED_PATAGONIAN_OAK_LOG);
+        register("stripped_patagonian_oak_wood", STRIPPED_PATAGONIAN_OAK_WOOD);
         register("patagonian_oak_log_branch", PATAGONIAN_OAK_LOG_BRANCH);
         register("stripped_patagonian_oak_log_branch", STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
+
+        register("redwood_log", REDWOOD_LOG);
+        register("redwood_wood", REDWOOD_WOOD);
+        register("stripped_redwood_log", STRIPPED_REDWOOD_LOG);
+        register("stripped_redwood_wood", STRIPPED_REDWOOD_WOOD);
+        register("redwood_log_root", REDWOOD_LOG_ROOT);
+        register("stripped_redwood_log_root", STRIPPED_REDWOOD_LOG_ROOT);
 
         register("grassy_dune_sand", GRASSY_DUNE_SAND);
         register("dune_sand", DUNE_SAND);

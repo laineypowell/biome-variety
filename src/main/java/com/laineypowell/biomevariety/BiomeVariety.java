@@ -56,8 +56,17 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
 
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG);
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_WOOD);
+                            output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_LOG);
+                            output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_WOOD);
                             output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG_BRANCH);
                             output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
+
+                            output.accept(BiomeVarietyItems.REDWOOD_LOG);
+                            output.accept(BiomeVarietyItems.REDWOOD_WOOD);
+                            output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_LOG);
+                            output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_WOOD);
+                            output.accept(BiomeVarietyItems.REDWOOD_LOG_ROOT);
+                            output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_LOG_ROOT);
 
                             output.accept(BiomeVarietyItems.GRASSY_DUNE_SAND);
                             output.accept(BiomeVarietyItems.DUNE_SAND);
@@ -83,9 +92,10 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
 
         log(BiomeVarietyBlocks.BAOBAB_LOG, BiomeVarietyBlocks.STRIPPED_BAOBAB_LOG);
         log(BiomeVarietyBlocks.BAOBAB_WOOD, BiomeVarietyBlocks.STRIPPED_BAOBAB_WOOD);
-
-        log(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG, Blocks.STRIPPED_OAK_LOG);
-        log(BiomeVarietyBlocks.PATAGONIAN_OAK_WOOD, Blocks.STRIPPED_OAK_WOOD);
+        log(BiomeVarietyBlocks.PATAGONIAN_OAK_LOG, BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG);
+        log(BiomeVarietyBlocks.PATAGONIAN_OAK_WOOD, BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_WOOD);
+        log(BiomeVarietyBlocks.REDWOOD_LOG, BiomeVarietyBlocks.STRIPPED_REDWOOD_LOG);
+        log(BiomeVarietyBlocks.REDWOOD_WOOD, BiomeVarietyBlocks.STRIPPED_REDWOOD_WOOD);
 
         dirt(BiomeVarietyBlocks.GRASSY_DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND_FARMLAND);
         dirt(BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND, BiomeVarietyBlocks.DUNE_SAND_FARMLAND);

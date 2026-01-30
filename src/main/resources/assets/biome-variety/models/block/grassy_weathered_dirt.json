@@ -3,7 +3,7 @@
   "textures": {
     "particle": "#bottom",
     "bottom": "biome-variety:block/weathered_dirt",
-    "side": "biome-variety:block/weathered_dirt",
-    "overlay": "biome-variety:block/grassy_dune_sand_side_overlay"
+    "side": "biome-variety:block/grassy_weathered_dirt_side",
+    "overlay": "biome-variety:block/grassy_weathered_dirt_side_overlay"
   }
 }

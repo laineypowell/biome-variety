@@ -1,0 +1,33 @@
+{
+  "type": "biome-variety:noise_sample",
+  "config": {
+    "surface": {
+      "type": "biome-variety:split",
+      "on_floor": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:coarse_dirt"
+        }
+      },
+      "under_floor": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:dirt"
+        }
+      }
+    },
+    "predicate": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "biome-variety:grassy_weathered_dirt",
+        "biome-variety:weathered_dirt"
+      ]
+    },
+    "noise": {
+      "type": "biome-variety:simplex",
+      "grain": 48.0
+    },
+    "radius": 12.0,
+    "threshold": 0.1
+  }
+}

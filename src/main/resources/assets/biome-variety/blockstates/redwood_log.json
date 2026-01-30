@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "biome-variety:block/redwood_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "biome-variety:block/redwood_log"
+    },
+    "axis=z": {
+      "model": "biome-variety:block/redwood_log_horizontal",
+      "x": 90
+    }
+  }
+}

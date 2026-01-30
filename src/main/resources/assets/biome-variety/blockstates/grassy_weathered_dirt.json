@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "biome-variety:block/grassy_weathered_dirt"
-    }
+    "": [
+      {
+        "model": "biome-variety:block/grassy_weathered_dirt"
+      },
+      {
+        "model": "biome-variety:block/grassy_weathered_dirt",
+        "y": 90
+      },
+      {
+        "model": "biome-variety:block/grassy_weathered_dirt",
+        "y": 180
+      },
+      {
+        "model": "biome-variety:block/grassy_weathered_dirt",
+        "y": 270
+      }
+    ]
   }
 }
