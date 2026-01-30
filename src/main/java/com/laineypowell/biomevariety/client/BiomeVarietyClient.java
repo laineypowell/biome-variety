@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.Block;
 
 public final class BiomeVarietyClient implements ClientModInitializer {
     @Override
@@ -22,21 +23,30 @@ public final class BiomeVarietyClient implements ClientModInitializer {
                 BiomeVarietyBlocks.GRASSY_DUNE_SAND,
                 BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT,
                 BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
-                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
+                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH,
+                BiomeVarietyBlocks.SHRUB_LEAVES,
+                BiomeVarietyBlocks.SHRUB_LEAVES_AWNING);
 
-        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> grassColour(blockAndTintGetter, blockPos),
-                BiomeVarietyBlocks.GRASSY_DUNE_SAND, BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT);
-        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> foliageColour(blockAndTintGetter, blockPos),
+        grassColor(
+                BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT,
+                BiomeVarietyBlocks.GRASSY_DUNE_SAND
+        );
+        foliageColor(
                 BiomeVarietyBlocks.DRY_LEAVES,
                 BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
-                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
+                BiomeVarietyBlocks.SHRUB_LEAVES,
+                BiomeVarietyBlocks.SHRUB_LEAVES_AWNING
+        );
+    }
 
-        ColorProviderRegistry.ITEM.register((itemStack, i) -> grassColour(null, null),
-                BiomeVarietyBlocks.GRASSY_DUNE_SAND, BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT);
-        ColorProviderRegistry.ITEM.register((itemStack, i) -> foliageColour(null, null),
-                BiomeVarietyBlocks.DRY_LEAVES,
-                BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
-                BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
+    public void grassColor(Block... blocks) {
+        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> grassColour(blockAndTintGetter, blockPos), blocks);
+        ColorProviderRegistry.ITEM.register((itemStack, i) -> grassColour(null, null), blocks);
+    }
+
+    public void foliageColor(Block... blocks) {
+        ColorProviderRegistry.BLOCK.register((blockState, blockAndTintGetter, blockPos, i) -> foliageColour(blockAndTintGetter, blockPos), blocks);
+        ColorProviderRegistry.ITEM.register((itemStack, i) -> foliageColour(null, null), blocks);
     }
 
     public int grassColour(BlockAndTintGetter getter, BlockPos blockPos) {

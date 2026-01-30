@@ -1,5 +1,11 @@
 package com.laineypowell.biomevariety;
 
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.IntList;
+import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.longs.LongList;
+import it.unimi.dsi.fastutil.objects.ObjectIterators;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
@@ -7,15 +13,28 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public final class Structure {
-    private final Map<BlockPos, BlockState> map;
+    private final List<BlockState> blockStates;
 
-    private Structure(Map<BlockPos, BlockState> map) {
-        this.map = map;
+    private final Int2ObjectMap<LongList> lists;
+    private final Int2IntMap blocks;
+
+    private Structure(List<BlockState> blockStates, Int2ObjectMap<LongList> lists, Int2IntMap blocks) {
+        this.blockStates = blockStates;
+        this.lists = lists;
+        this.blocks = blocks;
+    }
+
+    public void add(int x, int y, int z, BlockStateProvider provider, RandomSource randomSource) {
+        var blockPos = new BlockPos(x, y, z);
+        add(blockPos, provider.getState(randomSource, blockPos));
     }
 
     public void add(int x, int y, int z, BlockState blockState) {
@@ -59,8 +78,29 @@ public final class Structure {
         }
     }
 
-    public static Structure structure() {
-        return new Structure(new HashMap<>());
+    public Iterator<BlockPos> iterator(BlockState blockState) {
+        var i = blockStates.indexOf(blockState);
+        if (lists.containsKey(i)) {
+            var iterator = lists.get(i).longIterator();
+            var blockPos = new BlockPos.MutableBlockPos();
+            return new Iterator<>() {
+                @Override
+                public boolean hasNext() {
+                    return iterator.hasNext();
+                }
+
+                @Override
+                public BlockPos next() {
+                    var l = iterator.nextLong();
+                    var x = (int) (l & 0x1FFFFFF);
+                    var y = (int) ((l >> 21) & 0x1FFFFFF);
+                    var z = (int) ((l >> 42) & 0x1FFFFFF);
+                    return blockPos.set(x, y, z);
+                }
+            };
+        }
+
+        return ObjectIterators.emptyIterator();
     }
 
 }

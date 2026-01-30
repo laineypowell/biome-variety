@@ -43,11 +43,7 @@ public class LogBranchBlock extends HorizontalDirectionalBlock {
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
-        return defaultBlockState().setValue(FACING, horizontal(blockPlaceContext.getClickedFace()));
-    }
-
-    public Direction horizontal(Direction direction) {
-        return Direction.Plane.VERTICAL.test(direction) ? Direction.NORTH : direction;
+        return defaultBlockState().setValue(FACING, horizontal(blockPlaceContext));
     }
 
     public VoxelShape rotateShape(BlockState blockState) {
@@ -65,6 +61,11 @@ public class LogBranchBlock extends HorizontalDirectionalBlock {
             case SOUTH -> 2;
             default -> 1;
         };
+    }
+
+    public static Direction horizontal(BlockPlaceContext context) {
+        var direction = context.getClickedFace();
+        return Direction.Plane.VERTICAL.test(direction) ? context.getHorizontalDirection(): direction;
     }
 
 }

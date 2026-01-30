@@ -1,0 +1,17 @@
+{
+  "type": "biome-variety:shrub",
+  "config": {
+    "log": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:oak_log"
+      }
+    },
+    "leaves": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:oak_leaves"
+      }
+    }
+  }
+}

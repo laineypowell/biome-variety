@@ -57,6 +57,9 @@ public final class BiomeVarietyBlocks {
     };
     public static final Block STRIPPED_REDWOOD_LOG_ROOT = new LogRootBlock(Properties.copy(Blocks.OAK_PLANKS));
 
+    public static final Block SHRUB_LEAVES = new LeavesBlock(Properties.copy(Blocks.OAK_LEAVES));
+    public static final Block SHRUB_LEAVES_AWNING = new LeavesAwningBlock(Properties.of().sound(SoundType.AZALEA_LEAVES).instabreak().noCollission().noOcclusion());
+
     public static final Block GRASSY_DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
     public static final Block DUNE_SAND = new Block(Properties.copy(Blocks.DIRT));
     public static final Block DUNE_SAND_PATH = new DirtPathBlock(Properties.copy(Blocks.DIRT_PATH));
@@ -84,7 +87,7 @@ public final class BiomeVarietyBlocks {
         }
     };
     public static final Block DRY_LEAVES = new DryLeavesBlock(Properties.of().sound(SoundType.CHERRY_LEAVES).instabreak().noCollission().noOcclusion().noLootTable());
-    public static final Block BUTTONWEED = new ButtonweedBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
+    public static final Block BUTTONWEED = new DryLeavesBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
     public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion().offsetType(BlockBehaviour.OffsetType.XZ)) {
 
         @Override
@@ -114,6 +117,9 @@ public final class BiomeVarietyBlocks {
         register("stripped_redwood_wood", STRIPPED_REDWOOD_WOOD);
         register("redwood_log_root", REDWOOD_LOG_ROOT);
         register("stripped_redwood_log_root", STRIPPED_REDWOOD_LOG_ROOT);
+
+        register("shrub_leaves", SHRUB_LEAVES);
+        register("shrub_leaves_awning", SHRUB_LEAVES_AWNING);
 
         register("grassy_dune_sand", GRASSY_DUNE_SAND);
         register("dune_sand", DUNE_SAND);

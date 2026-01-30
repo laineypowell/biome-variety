@@ -28,6 +28,9 @@ public final class BiomeVarietyItems {
     public static final Item REDWOOD_LOG_ROOT = blockItem(BiomeVarietyBlocks.REDWOOD_LOG_ROOT);
     public static final Item STRIPPED_REDWOOD_LOG_ROOT = blockItem(BiomeVarietyBlocks.STRIPPED_REDWOOD_LOG_ROOT);
 
+    public static final Item SHRUB_LEAVES = blockItem(BiomeVarietyBlocks.SHRUB_LEAVES);
+    public static final Item SHRUB_LEAVES_AWNING = blockItem(BiomeVarietyBlocks.SHRUB_LEAVES_AWNING);
+
     public static final Item GRASSY_DUNE_SAND = blockItem(BiomeVarietyBlocks.GRASSY_DUNE_SAND);
     public static final Item DUNE_SAND = blockItem(BiomeVarietyBlocks.DUNE_SAND);
     public static final Item DUNE_SAND_PATH = blockItem(BiomeVarietyBlocks.DUNE_SAND_PATH);
@@ -69,6 +72,9 @@ public final class BiomeVarietyItems {
         register("stripped_redwood_wood", STRIPPED_REDWOOD_WOOD);
         register("redwood_log_root", REDWOOD_LOG_ROOT);
         register("stripped_redwood_log_root", STRIPPED_REDWOOD_LOG_ROOT);
+
+        register("shrub_leaves", SHRUB_LEAVES);
+        register("shrub_leaves_awning", SHRUB_LEAVES_AWNING);
 
         register("grassy_dune_sand", GRASSY_DUNE_SAND);
         register("dune_sand", DUNE_SAND);

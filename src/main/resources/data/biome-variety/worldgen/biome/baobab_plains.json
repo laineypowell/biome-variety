@@ -21,10 +21,10 @@
     ],
     [
       "biome-variety:savanna_grass",
-      "biome-variety:buttonweed_patches",
       "minecraft:patch_grass_taiga_2",
       "minecraft:patch_grass_savanna",
       "biome-variety:tall_grass_patches",
+      "biome-variety:flower_buttonweed",
       "biome-variety:flower_azure_bluet"
     ],
     [

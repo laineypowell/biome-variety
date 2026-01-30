@@ -11,15 +11,14 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 public final class BiomeVarietyFeatures {
     public static final Feature<NoneFeatureConfiguration> BAOBAB_TREE = new BaobabTreeFeature();
     public static final Feature<NoneFeatureConfiguration> PATAGONIAN_OAK_TREE = new PatagonianOakTreeFeature();
-
-    public static final Feature<NoneFeatureConfiguration> FLOWER = new ButtonweedFeature();
     public static final Feature<NoiseSampleFeatureConfiguration> NOISE_SAMPLE = new NoiseSampleFeature();
+    public static final Feature<ShrubFeatureConfiguration> SHRUB = new ShrubFeature();
 
     public static void register() {
         register("baobab_tree", BAOBAB_TREE);
         register("patagonian_oak_tree", PATAGONIAN_OAK_TREE);
-        register("flower", FLOWER);
         register("noise_sample", NOISE_SAMPLE);
+        register("shrub", SHRUB);
     }
 
     public static void register(String name, Feature<? extends FeatureConfiguration> feature) {

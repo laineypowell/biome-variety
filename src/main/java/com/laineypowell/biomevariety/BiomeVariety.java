@@ -68,6 +68,9 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                             output.accept(BiomeVarietyItems.REDWOOD_LOG_ROOT);
                             output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_LOG_ROOT);
 
+                            output.accept(BiomeVarietyItems.SHRUB_LEAVES);
+                            output.accept(BiomeVarietyItems.SHRUB_LEAVES_AWNING);
+
                             output.accept(BiomeVarietyItems.GRASSY_DUNE_SAND);
                             output.accept(BiomeVarietyItems.DUNE_SAND);
                             output.accept(BiomeVarietyItems.DUNE_SAND_PATH);

@@ -1,0 +1,29 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#awning",
+		"awning": "biome-variety:block/shrub_leaves_awning"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 4],
+			"to": [3, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 0, 0]},
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 12, 16], "texture": "#awning", "tintindex": 0},
+				"west": {"uv": [12, 0, 0, 16], "texture": "#awning", "tintindex": 0}
+			}
+		},
+		{
+			"from": [13, 0, 4],
+			"to": [13, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 0]},
+			"shade": false,
+			"faces": {
+				"east": {"uv": [0, 0, 12, 16], "texture": "#awning", "tintindex": 0},
+				"west": {"uv": [12, 0, 0, 16], "texture": "#awning", "tintindex": 0}
+			}
+		}
+	]
+}
