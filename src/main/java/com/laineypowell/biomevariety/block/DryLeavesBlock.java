@@ -11,7 +11,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 @SuppressWarnings("all")
-public final class DryLeavesBlock extends BushBlock {
+public class DryLeavesBlock extends BushBlock {
     public static final VoxelShape SHAPE = Block.box(0.0d, 0.0d, 0.0d, 16.0d, 2.0d, 16.0d);
 
     public DryLeavesBlock(Properties properties) {

@@ -1,6 +1,7 @@
 package com.laineypowell.biomevariety;
 
 import com.laineypowell.biomevariety.block.*;
+import com.laineypowell.biomevariety.block.CakeBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,6 +19,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public final class BiomeVarietyBlocks {
     public static final Block BAOBAB_LOG = new RotatedPillarBlock(Properties.copy(Blocks.OAK_LOG));
@@ -80,14 +84,34 @@ public final class BiomeVarietyBlocks {
     public static final Block WEATHERED_DIRT_PATH = new Block(Properties.copy(Blocks.DIRT_PATH));
     public static final Block WEATHERED_DIRT_FARMLAND = new Block(Properties.copy(Blocks.FARMLAND));
 
-    public static final Block ICED_CAKE_BLOCK = new Block(Properties.copy(Blocks.DIRT));
-    public static final Block CAKE_BLOCK = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block CAKE_BLOCK = new CakeBlock(Properties.copy(Blocks.DIRT));
     public static final Block CAKE_BLOCK_PATH = new Block(Properties.copy(Blocks.DIRT_PATH));
     public static final Block CAKE_BLOCK_FARMLAND = new Block(Properties.copy(Blocks.FARMLAND));
-    public static final Block MUFFIN = new Block(Properties.copy(Blocks.DIRT));
-    public static final Block GIANT_SWEET_BERRY = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block MUFFIN = new Block(Properties.copy(Blocks.DIRT)) {
+        private final VoxelShape shape = Shapes.box(0.125, 0, 0.125, 0.875, 0.625, 0.875);
+
+        @Override
+        public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+            return shape;
+        }
+    };
+    public static final Block GIANT_SWEET_BERRY = new DryLeavesBlock(Properties.copy(Blocks.DIRT)) {
+        private final VoxelShape shape = Shapes.box(0.1875, 0, 0.1875, 0.8125, 0.5625, 0.8125);
+
+        @Override
+        public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+            return shape;
+        }
+    };
     public static final Block JAM_FILLING = new Block(Properties.copy(Blocks.DIRT));
-    public static final Block ICING_LAYER = new Block(Properties.of());
+    public static final Block ICING_LAYER = new DryLeavesBlock(Properties.of()) {
+        private final VoxelShape shape = Shapes.box(0, 0, 0, 1, 0.1875, 1);
+
+        @Override
+        public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+            return shape;
+        }
+    };
 
     public static final Block SAVANNA_GRASS = new DoublePlantBlock(Properties.copy(Blocks.TALL_GRASS)) {
         @Override
@@ -146,7 +170,6 @@ public final class BiomeVarietyBlocks {
         register("weathered_dirt_path", WEATHERED_DIRT_PATH);
         register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
 
-        register("iced_cake_block", ICED_CAKE_BLOCK);
         register("cake_block", CAKE_BLOCK);
         register("cake_block_path", CAKE_BLOCK_PATH);
         register("cake_block_farmland", CAKE_BLOCK_FARMLAND);

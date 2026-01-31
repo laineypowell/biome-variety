@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "biome-variety:block/cake_block",
-    "side": "biome-variety:block/iced_cake_block_side"
+    "side": "biome-variety:block/snowy_cake_block_side"
   }
 }

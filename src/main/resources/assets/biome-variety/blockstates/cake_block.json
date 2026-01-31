@@ -1,7 +1,13 @@
 {
   "variants": {
-    "": {
+    "covered_with=none": {
       "model": "biome-variety:block/cake_block"
+    },
+    "covered_with=icing": {
+      "model": "biome-variety:block/iced_cake_block"
+    },
+    "covered_with=snow": {
+      "model": "biome-variety:block/snowy_cake_block"
     }
   }
 }

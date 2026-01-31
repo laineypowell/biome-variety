@@ -21,7 +21,7 @@ public final class BiomeVarietySurfaceRules {
                 )),
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.REDWOOD_FOREST), surface(SurfaceRules.state(BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.WEATHERED_DIRT.defaultBlockState()))),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.SWEETS), surface(SurfaceRules.state(BiomeVarietyBlocks.ICED_CAKE_BLOCK.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.CAKE_BLOCK.defaultBlockState())))
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.SWEETS), surface(SurfaceRules.state(BiomeVarietyBlocks.CAKE_BLOCK.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.CAKE_BLOCK.defaultBlockState())))
         );
     }
 

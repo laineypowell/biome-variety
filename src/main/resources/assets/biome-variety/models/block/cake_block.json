@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "biome-variety:block/cake_block"
+    "end": "biome-variety:block/cake_block_top",
+    "side": "biome-variety:block/cake_block"
   }
 }
