@@ -46,6 +46,15 @@ public final class BiomeVarietyItems {
     public static final Item WEATHERED_DIRT_PATH = blockItem(BiomeVarietyBlocks.WEATHERED_DIRT_PATH);
     public static final Item WEATHERED_DIRT_FARMLAND = blockItem(BiomeVarietyBlocks.WEATHERED_DIRT_FARMLAND);
 
+    public static final Item ICED_CAKE_BLOCK = blockItem(BiomeVarietyBlocks.ICED_CAKE_BLOCK);
+    public static final Item CAKE_BLOCK = blockItem(BiomeVarietyBlocks.CAKE_BLOCK);
+    public static final Item CAKE_BLOCK_PATH = blockItem(BiomeVarietyBlocks.CAKE_BLOCK_PATH);
+    public static final Item CAKE_BLOCK_FARMLAND = blockItem(BiomeVarietyBlocks.CAKE_BLOCK_FARMLAND);
+    public static final Item MUFFIN = blockItem(BiomeVarietyBlocks.MUFFIN);
+    public static final Item GIANT_SWEET_BERRY = blockItem(BiomeVarietyBlocks.GIANT_SWEET_BERRY);
+    public static final Item JAM_FILLING = blockItem(BiomeVarietyBlocks.JAM_FILLING);
+    public static final Item ICING_LAYER = blockItem(BiomeVarietyBlocks.ICING_LAYER);
+
     public static final Item SAVANNA_GRASS = blockItem(BiomeVarietyBlocks.SAVANNA_GRASS);
     public static final Item FOREST_FERN = blockItem(BiomeVarietyBlocks.FOREST_FERN);
     public static final Item DRY_LEAVES = blockItem(BiomeVarietyBlocks.DRY_LEAVES);
@@ -91,6 +100,15 @@ public final class BiomeVarietyItems {
         register("weathered_dirt", WEATHERED_DIRT);
         register("weathered_dirt_path", WEATHERED_DIRT_PATH);
         register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
+
+        register("iced_cake_block", ICED_CAKE_BLOCK);
+        register("cake_block", CAKE_BLOCK);
+        register("cake_block_path", CAKE_BLOCK_PATH);
+        register("cake_block_farmland", CAKE_BLOCK_FARMLAND);
+        register("muffin", MUFFIN);
+        register("giant_sweet_berry", GIANT_SWEET_BERRY);
+        register("jam_filling", JAM_FILLING);
+        register("icing_layer", ICING_LAYER);
 
         register("savanna_grass", SAVANNA_GRASS);
         register("forest_fern", FOREST_FERN);

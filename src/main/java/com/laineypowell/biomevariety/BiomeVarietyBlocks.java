@@ -80,6 +80,15 @@ public final class BiomeVarietyBlocks {
     public static final Block WEATHERED_DIRT_PATH = new Block(Properties.copy(Blocks.DIRT_PATH));
     public static final Block WEATHERED_DIRT_FARMLAND = new Block(Properties.copy(Blocks.FARMLAND));
 
+    public static final Block ICED_CAKE_BLOCK = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block CAKE_BLOCK = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block CAKE_BLOCK_PATH = new Block(Properties.copy(Blocks.DIRT_PATH));
+    public static final Block CAKE_BLOCK_FARMLAND = new Block(Properties.copy(Blocks.FARMLAND));
+    public static final Block MUFFIN = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block GIANT_SWEET_BERRY = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block JAM_FILLING = new Block(Properties.copy(Blocks.DIRT));
+    public static final Block ICING_LAYER = new Block(Properties.of());
+
     public static final Block SAVANNA_GRASS = new DoublePlantBlock(Properties.copy(Blocks.TALL_GRASS)) {
         @Override
         protected boolean mayPlaceOn(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
@@ -136,6 +145,15 @@ public final class BiomeVarietyBlocks {
         register("weathered_dirt", WEATHERED_DIRT);
         register("weathered_dirt_path", WEATHERED_DIRT_PATH);
         register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
+
+        register("iced_cake_block", ICED_CAKE_BLOCK);
+        register("cake_block", CAKE_BLOCK);
+        register("cake_block_path", CAKE_BLOCK_PATH);
+        register("cake_block_farmland", CAKE_BLOCK_FARMLAND);
+        register("muffin", MUFFIN);
+        register("giant_sweet_berry", GIANT_SWEET_BERRY);
+        register("jam_filling", JAM_FILLING);
+        register("icing_layer", ICING_LAYER);
 
         register("savanna_grass", SAVANNA_GRASS);
         register("forest_fern", FOREST_FERN);

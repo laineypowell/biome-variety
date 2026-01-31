@@ -11,6 +11,7 @@ public final class BiomeVarietyItemTags {
     public static final TagKey<Item> DUNE_SAND = tagKey("dune_sand");
     public static final TagKey<Item> ANTARCTIC_ICE = tagKey("antarctic_ice");
     public static final TagKey<Item> WEATHERED_DIRT = tagKey("weathered_dirt");
+    public static final TagKey<Item> CAKE_BLOCK = tagKey("cake_block");
 
     public static TagKey<Item> tagKey(String name) {
         return TagKey.create(Registries.ITEM, BiomeVariety.resourceLocation(name));

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "biome-variety:block/jam_filling_bottom",
+    "side": "biome-variety:block/jam_filling",
+    "top": "minecraft:block/jam_filling_top"
+  }
+}

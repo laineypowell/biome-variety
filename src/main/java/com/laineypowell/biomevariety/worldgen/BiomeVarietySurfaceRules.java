@@ -20,7 +20,8 @@ public final class BiomeVarietySurfaceRules {
                                 surface(SurfaceRules.state(BiomeVarietyBlocks.SNOWY_ANTARCTIC_ICE.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.ANTARCTIC_ICE.defaultBlockState())))
                 )),
 
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.REDWOOD_FOREST), surface(SurfaceRules.state(BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.WEATHERED_DIRT.defaultBlockState())))
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.REDWOOD_FOREST), surface(SurfaceRules.state(BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.WEATHERED_DIRT.defaultBlockState()))),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeVarietyBiomes.SWEETS), surface(SurfaceRules.state(BiomeVarietyBlocks.ICED_CAKE_BLOCK.defaultBlockState()), SurfaceRules.state(BiomeVarietyBlocks.CAKE_BLOCK.defaultBlockState())))
         );
     }
 
