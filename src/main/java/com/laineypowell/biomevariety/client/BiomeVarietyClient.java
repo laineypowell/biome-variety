@@ -25,11 +25,13 @@ public final class BiomeVarietyClient implements ClientModInitializer {
                 BiomeVarietyBlocks.PATAGONIAN_OAK_LOG_BRANCH,
                 BiomeVarietyBlocks.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH,
                 BiomeVarietyBlocks.SHRUB_LEAVES,
-                BiomeVarietyBlocks.SHRUB_LEAVES_AWNING);
+                BiomeVarietyBlocks.SHRUB_LEAVES_AWNING,
+                BiomeVarietyBlocks.FOREST_FERN);
 
         grassColor(
                 BiomeVarietyBlocks.GRASSY_WEATHERED_DIRT,
-                BiomeVarietyBlocks.GRASSY_DUNE_SAND
+                BiomeVarietyBlocks.GRASSY_DUNE_SAND,
+                BiomeVarietyBlocks.FOREST_FERN
         );
         foliageColor(
                 BiomeVarietyBlocks.DRY_LEAVES,

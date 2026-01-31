@@ -86,6 +86,7 @@ public final class BiomeVarietyBlocks {
             return super.mayPlaceOn(blockState, blockGetter, blockPos) || blockState.is(BlockTags.SAND);
         }
     };
+    public static final Block FOREST_FERN = new BushBlock(Properties.copy(Blocks.FERN));
     public static final Block DRY_LEAVES = new DryLeavesBlock(Properties.of().sound(SoundType.CHERRY_LEAVES).instabreak().noCollission().noOcclusion().noLootTable());
     public static final Block BUTTONWEED = new DryLeavesBlock(Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion());
     public static final Block VIOLET = new FlowerBlock(MobEffects.BLINDNESS, 1, Properties.of().sound(SoundType.PINK_PETALS).instabreak().noCollission().noOcclusion().offsetType(BlockBehaviour.OffsetType.XZ)) {
@@ -137,6 +138,7 @@ public final class BiomeVarietyBlocks {
         register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
 
         register("savanna_grass", SAVANNA_GRASS);
+        register("forest_fern", FOREST_FERN);
         register("dry_leaves", DRY_LEAVES);
         register("buttonweed", BUTTONWEED);
         register("violet", VIOLET);

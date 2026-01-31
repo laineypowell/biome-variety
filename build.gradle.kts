@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.laineypowell"
-version = "1.1-beta"
+version = "1.2-beta"
 
 repositories {
     mavenCentral()

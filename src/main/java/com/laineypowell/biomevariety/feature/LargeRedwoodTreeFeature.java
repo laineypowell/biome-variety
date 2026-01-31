@@ -17,7 +17,6 @@ public final class LargeRedwoodTreeFeature extends Feature<NoneFeatureConfigurat
             new Vector4i( 1,  2,  0,  2),
             new Vector4i(-1,  1, -1,  0),
             new Vector4i( 2,  0,  2,  1),
-
     };
 
     public LargeRedwoodTreeFeature() {
@@ -42,12 +41,17 @@ public final class LargeRedwoodTreeFeature extends Feature<NoneFeatureConfigurat
             structure.add(0, i, 1, log);
         }
 
+        var random = featurePlaceContext.random();
         for (var direction : Direction.Plane.HORIZONTAL) {
             var vector4i = matrix4i[direction.ordinal() - 2];
 
             var root = BiomeVarietyBlocks.REDWOOD_LOG_ROOT.defaultBlockState().setValue(LogRootBlock.FACING, direction);
-            structure.add(vector4i.x, 0, vector4i.y, root.setValue(LogRoot.LOG_ROOT, LogRoot.RIGHT));
-            structure.add(vector4i.z, 0, vector4i.w, root);
+            for (var i = -3; i < 1 + random.nextInt(3); i++) {
+                structure.add(vector4i.x, i, vector4i.y, root.setValue(LogRoot.LOG_ROOT, LogRoot.RIGHT));
+            }
+            for (var i = -3; i < 1 + random.nextInt(3); i++) {
+                structure.add(vector4i.z, i, vector4i.w, root);
+            }
         }
 
         structure.place(featurePlaceContext.level(), featurePlaceContext.origin());

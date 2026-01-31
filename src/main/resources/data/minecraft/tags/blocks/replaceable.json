@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "biome-variety:shrub_leaves_awning"
+    "biome-variety:shrub_leaves_awning",
+    "biome-variety:dry_leaves",
+    "biome-variety:forest_fern"
   ]
 }

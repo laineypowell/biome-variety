@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.registry.FlattenableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.fabric.api.registry.TillableBlockRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -17,9 +18,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -46,46 +50,18 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
                         .icon(BiomeVarietyItems.BAOBAB_LOG::getDefaultInstance)
                         .title(Component.translatable("itemGroup.biome-variety"))
                         .displayItems((itemDisplayParameters, output) -> {
-                            output.accept(BiomeVarietyItems.BAOBAB_LOG);
-                            output.accept(BiomeVarietyItems.BAOBAB_WOOD);
-                            output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG);
-                            output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_WOOD);
-                            output.accept(BiomeVarietyItems.BAOBAB_LOG_WEDGE);
-                            output.accept(BiomeVarietyItems.STRIPPED_BAOBAB_LOG_WEDGE);
-
-                            output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG);
-                            output.accept(BiomeVarietyItems.PATAGONIAN_OAK_WOOD);
-                            output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_LOG);
-                            output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_WOOD);
-                            output.accept(BiomeVarietyItems.PATAGONIAN_OAK_LOG_BRANCH);
-                            output.accept(BiomeVarietyItems.STRIPPED_PATAGONIAN_OAK_LOG_BRANCH);
-
-                            output.accept(BiomeVarietyItems.REDWOOD_LOG);
-                            output.accept(BiomeVarietyItems.REDWOOD_WOOD);
-                            output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_LOG);
-                            output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_WOOD);
-                            output.accept(BiomeVarietyItems.REDWOOD_LOG_ROOT);
-                            output.accept(BiomeVarietyItems.STRIPPED_REDWOOD_LOG_ROOT);
-
+                            var provider = itemDisplayParameters.holders();
+                            accept(provider, BiomeVarietyItemTags.BAOBAB_LOGS, output);
+                            accept(provider, BiomeVarietyItemTags.PATAGONIAN_OAK_LOGS, output);
+                            accept(provider, BiomeVarietyItemTags.REDWOOD_LOGS, output);
                             output.accept(BiomeVarietyItems.SHRUB_LEAVES);
                             output.accept(BiomeVarietyItems.SHRUB_LEAVES_AWNING);
-
-                            output.accept(BiomeVarietyItems.GRASSY_DUNE_SAND);
-                            output.accept(BiomeVarietyItems.DUNE_SAND);
-                            output.accept(BiomeVarietyItems.DUNE_SAND_PATH);
-                            output.accept(BiomeVarietyItems.DUNE_SAND_FARMLAND);
-
-                            output.accept(BiomeVarietyItems.SNOWY_ANTARCTIC_ICE);
-                            output.accept(BiomeVarietyItems.ANTARCTIC_ICE);
-                            output.accept(BiomeVarietyItems.ANTARCTIC_ICE_PATH);
-                            output.accept(BiomeVarietyItems.ANTARCTIC_ICE_FARMLAND);
-
-                            output.accept(BiomeVarietyItems.GRASSY_WEATHERED_DIRT);
-                            output.accept(BiomeVarietyItems.WEATHERED_DIRT);
-                            output.accept(BiomeVarietyItems.WEATHERED_DIRT_PATH);
-                            output.accept(BiomeVarietyItems.WEATHERED_DIRT_FARMLAND);
+                            accept(provider, BiomeVarietyItemTags.DUNE_SAND, output);
+                            accept(provider, BiomeVarietyItemTags.ANTARCTIC_ICE, output);
+                            accept(provider, BiomeVarietyItemTags.WEATHERED_DIRT, output);
 
                             output.accept(BiomeVarietyItems.SAVANNA_GRASS);
+                            output.accept(BiomeVarietyItems.FOREST_FERN);
                             output.accept(BiomeVarietyItems.DRY_LEAVES);
                             output.accept(BiomeVarietyItems.BUTTONWEED);
                             output.accept(BiomeVarietyItems.VIOLET);
@@ -171,6 +147,12 @@ public final class BiomeVariety implements ModInitializer, TerraBlenderApi {
         }
 
         return InteractionResult.PASS;
+    }
+
+    public static void accept(HolderLookup.Provider provider, TagKey<Item> tagKey, CreativeModeTab.Output output) {
+        for (var holder : provider.lookupOrThrow(tagKey.registry()).getOrThrow(tagKey)) {
+            output.accept(holder.value());
+        }
     }
 
 }

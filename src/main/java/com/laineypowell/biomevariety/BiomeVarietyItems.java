@@ -47,6 +47,7 @@ public final class BiomeVarietyItems {
     public static final Item WEATHERED_DIRT_FARMLAND = blockItem(BiomeVarietyBlocks.WEATHERED_DIRT_FARMLAND);
 
     public static final Item SAVANNA_GRASS = blockItem(BiomeVarietyBlocks.SAVANNA_GRASS);
+    public static final Item FOREST_FERN = blockItem(BiomeVarietyBlocks.FOREST_FERN);
     public static final Item DRY_LEAVES = blockItem(BiomeVarietyBlocks.DRY_LEAVES);
     public static final Item BUTTONWEED = blockItem(BiomeVarietyBlocks.BUTTONWEED);
     public static final Item VIOLET = blockItem(BiomeVarietyBlocks.VIOLET);
@@ -92,6 +93,7 @@ public final class BiomeVarietyItems {
         register("weathered_dirt_farmland", WEATHERED_DIRT_FARMLAND);
 
         register("savanna_grass", SAVANNA_GRASS);
+        register("forest_fern", FOREST_FERN);
         register("dry_leaves", DRY_LEAVES);
         register("buttonweed", BUTTONWEED);
         register("violet", VIOLET);

@@ -4,11 +4,11 @@
   "has_precipitation": true,
   "creature_spawn_probability": 0,
   "effects": {
-    "sky_color": 9804532,
-    "fog_color": 13616383,
+    "sky_color": 11787481,
+    "fog_color": 14806236,
     "water_color": 2055855,
     "water_fog_color": 0,
-    "grass_color": 7383628,
+    "grass_color": 6988612,
     "foliage_color": 5746484
   },
   "spawners": {},
@@ -20,6 +20,7 @@
       "biome-variety:coarse_dirt_blob",
       "biome-variety:shrub",
       "biome-variety:dry_leaves",
+      "biome-variety:forest_fern",
       "minecraft:patch_grass_plain"
     ],
     [
