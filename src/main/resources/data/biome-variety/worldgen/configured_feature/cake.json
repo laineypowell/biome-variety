@@ -1,0 +1,34 @@
+{
+  "type": "biome-variety:structure",
+  "config": {
+    "structures": [
+      {
+        "value": "biome-variety:flat_cake",
+        "weight": 3
+      },
+      {
+        "value": "biome-variety:flat_cake_with_jam",
+        "weight": 4
+      },
+      {
+        "value": "biome-variety:round_cake"
+      },
+      {
+        "value": "biome-variety:round_cake_with_jam",
+        "weight": 2
+      },
+      {
+        "value": "biome-variety:small_cake",
+        "weight": 5
+      },
+      {
+        "value": "biome-variety:small_round_cake",
+        "weight": 4
+      },
+      {
+        "value": "biome-variety:small_round_cake_with_jam",
+        "weight": 5
+      }
+    ]
+  }
+}

@@ -39,7 +39,7 @@ public final class WeightedList<T> {
     }
 
     public static <T> Codec<Entry<T>> entryCodec(Codec<T> codec) {
-        return RecordCodecBuilder.create(instance -> instance.group(codec.fieldOf("value").forGetter(Entry<T>::t), Codec.INT.optionalFieldOf("weight", 0).forGetter(Entry<T>::weight)).apply(instance, Entry::new));
+        return RecordCodecBuilder.create(instance -> instance.group(codec.fieldOf("value").forGetter(Entry<T>::t), Codec.INT.optionalFieldOf("weight", 1).forGetter(Entry<T>::weight)).apply(instance, Entry::new));
     }
 
     public record Entry<T>(T t, int weight) {

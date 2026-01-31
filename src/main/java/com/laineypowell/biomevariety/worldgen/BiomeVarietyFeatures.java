@@ -15,6 +15,7 @@ public final class BiomeVarietyFeatures {
     public static final Feature<NoneFeatureConfiguration> LARGE_REDWOOD_TREE = new LargeRedwoodTreeFeature();
     public static final Feature<NoiseSampleFeatureConfiguration> NOISE_SAMPLE = new NoiseSampleFeature();
     public static final Feature<ShrubFeatureConfiguration> SHRUB = new ShrubFeature();
+    public static final Feature<StructureFeatureConfiguration> STRUCTURE = new StructureFeature();
 
     public static void register() {
         register("baobab_tree", BAOBAB_TREE);
@@ -23,6 +24,7 @@ public final class BiomeVarietyFeatures {
         register("large_redwood_tree", LARGE_REDWOOD_TREE);
         register("noise_sample", NOISE_SAMPLE);
         register("shrub", SHRUB);
+        register("structure", STRUCTURE);
     }
 
     public static void register(String name, Feature<? extends FeatureConfiguration> feature) {

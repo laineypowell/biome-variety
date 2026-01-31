@@ -16,6 +16,9 @@
   "spawn_costs": {},
   "carvers": {},
   "features": [
-    []
+    [],
+    [
+      "biome-variety:cake"
+    ]
   ]
 }
