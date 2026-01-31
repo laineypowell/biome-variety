@@ -6,6 +6,10 @@ plugins {
 group = "com.laineypowell"
 version = "1.2-beta"
 
+loom {
+    accessWidenerPath.set(file("src/main/resources/biome-variety.accesswidener"))
+}
+
 repositories {
     mavenCentral()
     maven("https://maven.impactdev.net/repository/development/")

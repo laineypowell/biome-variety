@@ -34,5 +34,6 @@
     "java": ">=17",
     "fabric-api": "*",
     "terrablender": ">=3.0.1.10"
-  }
+  },
+  "accessWidener": "biome-variety.accesswidener"
 }
